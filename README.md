@@ -29,20 +29,10 @@ Specialist in Health Informatics by UFRN (2017). Since 1996 manages and develops
 
 ## Experience
 
+* **Researcher** - Laboratório de Inovação tecnológica em Saúde (LAIS/HUOL/UFRN) - *(Jul 2015 – Present)*
+* **Information Technology Coordinator** Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte *(May 2017 – Present)*
+* **Systems Analyst** Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte *(Jan 2014 – May 2017)*
 
-### Laboratório de Inovação tecnológica em Saúde (LAIS/HUOL/UFRN)
-
-#### Researcher
-*Jul 2015 – Present*
-
-
-### 
-
-* **Information Technology Coordinator** Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte *(May 2017 – Present*)
-
-
-#### Systems Analyst
-*Jan 2014 – May 2017*
 
 
 
