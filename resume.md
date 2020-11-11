@@ -56,9 +56,9 @@ Graduated in Techniques of Analysis and Systems Development.
 
 
 
-1. **Manages AVASUS development** - SUS e-Learning (AVASUS) - aims to contribute to the training of workers, management and assistance in the Brazil Unified Health System (SUS)
-2. **Manages LUES Ecosystem development** - ecosystem management the combating syphilis on Brazil
-3. **Manages PNTD development** - a ecosystem to orchestrate telediagnosis in 9 states on Brazil 
+1. Management of AVASUS development - SUS e-Learning (AVASUS) - aims to contribute to the training of workers, management and assistance in the Brazil Unified Health System (SUS)
+2. Management of LUES Ecosystem development - ecosystem management the combating syphilis on Brazil
+3. Management of PNTD development - a ecosystem to orchestrate telediagnosis in 9 states on Brazil 
 
 
 ### Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte
