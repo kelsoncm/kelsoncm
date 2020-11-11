@@ -17,14 +17,8 @@ Specialist in Health Informatics by UFRN (2017). Since 1996 manages and develops
 
 ## Education
 
-### Federal University of Rio Grande do Norte
-Specialization in Health Informatics
-2015 – 2017
-
-### University do Tocantins
-Graduated in Techniques of Analysis and Systems Development.
-2008 – 2010
-
+* **Specialization in Health Informatics** - Federal University of Rio Grande do Norte (2015 – 2017)
+* **Graduated in Techniques of Analysis and Systems Development** - University do Tocantins (2008 – 2010)
 
 
 ## Languages
@@ -42,21 +36,14 @@ Graduated in Techniques of Analysis and Systems Development.
 *Jul 2015 – Present*
 
 
-### Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte
-Total Duration 6 yrs 11 mos
+### 
 
-#### Information Technology Coordinator
-*May 2017 – Present*
+* **Information Technology Coordinator** Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte *(May 2017 – Present*)
 
-1. Management of teams of developers, designers, user support, equipment maintenance and networks.
 
 #### Systems Analyst
 *Jan 2014 – May 2017*
 
-1. PHP development: project management of the new EaD portal and plugins and theme for Moodle; development of Moodle plugin for integration with the SUAP academic system.
-2. PostgreSQL 9.x DBMS Administration: Definition of the redundancy project.
-3. Governance: Beginning of the PDTI project.
-4. Python and Django development: Analysis of management modules for research and innovation projects and project management for extension of SUAP (Unified Public Administration System) and development of a student selection process system. Project coordination of the new MOOC solution design on the IFRN TIMTec platform. 
 
 
 ### VOX Tecnologia da Informação Ltda
