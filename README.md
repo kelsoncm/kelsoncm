@@ -42,3 +42,8 @@ Specialist in Health Informatics by UFRN (2017). Since 1996 manages and develops
 * **Web developer** - Zevallos Tecnologia em Informática Full-time - *(Nov 1999 – May 2001)*
 * **Delphi Developer** - Poliedro - *(Oct 1996 – Nov 1999)*
 * **Clipper Developer** - Poliedro - *(Feb 1996 – Oct 1996)*
+
+## Projects
+* AVASUS - https://lais.huol.ufrn.br/en/categoria/projects/health-informatics/
+* LUES Ecosystem - https://lais.huol.ufrn.br/en/?projects=quick-answer-to-syphilis
+* PNTD - https://lais.huol.ufrn.br/en/?projects=telessaude-rn-network
