@@ -17,8 +17,8 @@ Specialist in Health Informatics by UFRN (2017). Since 1996 manages and develops
 
 ## Education
 
-* **Specialization in Health Informatics** - Federal University of Rio Grande do Norte (2015 – 2017)
-* **Graduated in Techniques of Analysis and Systems Development** - University do Tocantins (2008 – 2010)
+* **Specialization in Health Informatics** - Federal University of Rio Grande do Norte - *(2015 – 2017)*
+* **Graduated in Techniques of Analysis and Systems Development** - University do Tocantins - *(2008 – 2010)*
 
 
 ## Languages
