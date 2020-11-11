@@ -27,23 +27,10 @@ Graduated in Techniques of Analysis and Systems Development.
 
 
 
-## Others courses
-* CaliberRM 2005 Essentials
-* CaliberRM, Requirements Management
-* Function Point Analysis (FPA)
-* How to Build Better Object Models
-* Netscale Switch Administration
-* Oracle Application Server 10g R2 Administration
-* StarTeam 2005 Essentials
-* StarTeam, Configuration Management
-* Together for JBuilder
-* UML Essentials
-
-
 ## Languages
-* English - Professional working proficiency
-* Portuguese - Native or bilingual proficiency
-* Spanish - Elementary proficiency
+* 🇧🇷 Portuguese - Native or bilingual proficiency
+* 🇬🇧 English - Professional working proficiency
+* 🇪🇸 Spanish - Elementary proficiency
 
 
 ## Experience
