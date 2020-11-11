@@ -1,4 +1,4 @@
-#  Kelson da Costa Medeiros  👋
+#  Kelson da Costa Medeiros
 
 Natal, Rio Grande do Norte, Brazil
 
