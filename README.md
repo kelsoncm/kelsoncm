@@ -44,6 +44,6 @@ Specialist in Health Informatics by UFRN (2017). Since 1996 manages and develops
 * **Clipper Developer** - Poliedro - *(Feb 1996 – Oct 1996)*
 
 ## Projects
-* AVASUS - https://lais.huol.ufrn.br/en/categoria/projects/health-informatics/
+* AVASUS - https://lais.huol.ufrn.br/en/?projects=avasus
 * LUES Ecosystem - https://lais.huol.ufrn.br/en/?projects=quick-answer-to-syphilis
 * PNTD - https://lais.huol.ufrn.br/en/?projects=telessaude-rn-network
