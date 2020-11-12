@@ -2,7 +2,7 @@
 
 Natal, Rio Grande do Norte, Brazil
 
-Now I am **Researcher** at *Laboratory of Technological Innovation in Health (LAIS/HUOL/UFRN)* and **Educational Technology Coordinator** at *IFRN*
+Now I am **Informatics in Health Researcher** at LAIS and **Educational Technology Coordinator** at IFRN
 
 
 #### About
