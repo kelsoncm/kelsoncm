@@ -15,6 +15,11 @@ Specialist in Health Informatics by UFRN (2017). Since 1996 manages and develops
 * Since 1996 object-oriented developer.
 
 
+### Personal projects
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kelsoncm&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+
+
 ## Education
 
 * **Specialization in Health Informatics** - Federal University of Rio Grande do Norte - *(2015 – 2017)*
@@ -47,3 +52,5 @@ Specialist in Health Informatics by UFRN (2017). Since 1996 manages and develops
 * AVASUS - https://lais.huol.ufrn.br/en/?projects=avasus
 * LUES Ecosystem - https://lais.huol.ufrn.br/en/?projects=quick-answer-to-syphilis
 * PNTD - https://lais.huol.ufrn.br/en/?projects=telessaude-rn-network
+
+
