@@ -1,5 +1,7 @@
 #  Kelson da Costa Medeiros
 
+[![Publons](https://publons.com/static/images/badge/rid_badge_small.png)](https://publons.com/researcher/2185504/kelson-da-costa-medeiros)
+
 Natal, Rio Grande do Norte, Brazil
 
 Now I am **Informatics in Health Researcher** at LAIS and **Educational Technology Coordinator** at IFRN
