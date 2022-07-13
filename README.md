@@ -1,12 +1,10 @@
-#  Kelson da Costa Medeiros 🇧🇷 🇬🇧 🇪🇸
+#  Kelson da Costa Medeiros 🇧🇷 🇬🇧
 
-[![LinkdIn](https://icons.iconarchive.com/icons/danleech/simple/24/linkedin-icon.png)](https://www.linkedin.com/in/kelsoncm/)
-[![Publons](https://publons.com/static/images/badge/rid_badge_small.png)](https://publons.com/researcher/2185504/kelson-da-costa-medeiros)
+[![LinkdIn](https://icons.iconarchive.com/icons/danleech/simple/24/linkedin-icon.png)](https://www.linkedin.com/in/kelsoncm/)[![Publons](https://publons.com/static/images/badge/rid_badge_small.png)](https://publons.com/researcher/2185504/kelson-da-costa-medeiros)
 
 📌 Natal, Rio Grande do Norte, Brazil
 
 Now I am **Informatics in Health Researcher** at LAIS and **Educational Technology Coordinator** at IFRN
-
 
 #### About
 
@@ -17,20 +15,15 @@ Specialist in Health Informatics by UFRN (2017). Since 1996 manages and develops
 * Since 1999 web systems developer.
 * Since 1996 object-oriented developer.
 
+### Stats
+![Kelsoncm's GitHub stats](https://github-readme-stats.vercel.app/api?username=kelsoncm&show_icons=true&theme=algolia&include_all_commits=true&count_private=true&show_owner=true)
 
-### Personal projects
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kelsoncm&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
-
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kelsoncm&layout=compact&hide=html,css,javascript&langs_count=10)](https://github.com/anuraghazra/github-readme-stats)
 
 ## Education
 
 * **Specialization in Health Informatics** - Federal University of Rio Grande do Norte - *(2015 – 2017)*
 * **Graduated in Techniques of Analysis and Systems Development** - University do Tocantins - *(2008 – 2010)*
-
-
-## Languages
-
 
 ## Projects
 * AVASUS - https://lais.huol.ufrn.br/en/?projects=avasus
