@@ -1,6 +1,6 @@
 # Kelson da Costa Medeiros 🇧🇷 🇬🇧
 
-**Specialist in Health Informatics | Educational Technology Coordinator | Full-Stack Developer **
+**Specialist in Health Informatics | Educational Technology Coordinator | Full-Stack Developer**
 
 - 📍 Natal, Rio Grande do Norte, Brazil  
 - 🏢 IFRN, LAIS/UFRN, LAICA/IFRN, NEES/UFAL, 
@@ -82,7 +82,7 @@ Django ORM for Moodle database, enabling seamless integration between Django app
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=kelsoncm&show_icons=true&theme=dark&count_private=true)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kelsoncm&layout=compact&theme=dark&hide=html,css)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kelsoncm&layout=compact&theme=dark&hide=html,css,scss)
 
 ## 🤝 Let's Connect
 
@@ -93,4 +93,3 @@ Django ORM for Moodle database, enabling seamless integration between Django app
 ---
 
 ⭐️ From [kelsoncm](https://github.com/kelsoncm) | 💻 Building technology that change lifes since 1996
-
