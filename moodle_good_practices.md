@@ -4146,31 +4146,138 @@ php admin/cli/purge_caches.php
 
 **Este guia é um documento vivo e deve ser atualizado regularmente.**
 
-## 25.1. Checklist de Rastreabilidade
+## 25.1. Checklist de Rastreabilidade (Para Agentes de IA)
 
-Antes de publicar uma versão do plugin, verifique:
+**Protocolo de validação obrigatório ANTES de cada commit gerado pelo agente.**
 
-- [ ] Índice sem duplicações, ordem correta (1→25) e âncoras funcionando
-- [ ] Seções 1-9 (Essenciais): CI/CD, testes, versionamento, docs e git atualizadas
-- [ ] Seções 10-14 (Funcionalidades): Backup e Restauração, Web Services, Tarefas, Capabilities revisadas
-- [ ] Seção 15 (Segurança by Design): validação, SQLi, XSS, CSRF, contexto, secrets e checklist
-- [ ] Seção 16 (Banco de Dados): schema, migrations, índices e `docs/database.md` com Mermaid atualizados
-- [ ] Seção 22 (Logs): depuração, log de erros, **estratégia de armazenamento de logs** e **eventos Moodle** revisados
-- [ ] Seção 23 (Deploy/Monitoramento): verificações, rollback e observabilidade consistentes
-- [ ] Seção 4.5 (Mobile-first e Suporte ao App) alinhada com endpoints e testes mobile
-- [ ] Testes (PHPUnit/Behat/CI) e requisitos de cobertura continuam coerentes com 4.4
-- [ ] `CHANGELOG.md`, `README.md`, `CONTRIBUTING.md` e `SECURITY.md` refletem mudanças recentes
+Este checklist garante que mudanças no código mantêm coerência com toda a documentação e padrões do projeto.
 
-## 25.2. Iteração Contínua
+### 25.1.1. Validações de Documentação (Requeridas)
 
-A cada release:
-1. Revisar índice, numeração e âncoras (evitar duplicações e seções órfãs)
-2. Atualizar segurança aplicada (seção 15) com novos riscos e mitigação real
-3. Atualizar logging/eventos (22.4 e 22.5) com retenção, observadores e rastreabilidade
-4. Revisar `docs/database.md` e diagrama Mermaid após qualquer mudança de schema
-5. Revalidar requisitos de testes/CI (4.4) e cenários mobile (4.5)
-6. Executar smoke de deploy/rollback em staging e registrar evidências
-7. Publicar lições aprendidas em changelog/docs para manter o guia vivo
+- [ ] **Índice atualizado**: Verificar se há novas seções (1→25) sem duplicações e âncoras funcionando
+- [ ] **CHANGELOG.md sincronizado**: Registrar a mudança no formato `[versão] - data` com tipo (feat/fix/refactor/docs)
+- [ ] **README.md atualizado**: Se mudanças afetarem uso, instalação ou dependências do plugin
+- [ ] **CONTRIBUTING.md relevante**: Se mudanças envolvem flow de desenvolvimento, testes ou CI/CD
+- [ ] **SECURITY.md verificado**: Se mudanças relacionadas a validação, permissões, autenticação ou dados sensíveis
+- [ ] **docs/database.md e Mermaid**: Se houve alterações em schema, migrações ou índices (seção 16)
+
+### 25.1.2. Validações de Código e Testes (Críticas)
+
+- [ ] **Testes criados/atualizados**: PHPUnit/Behat/JS devem passar localmente (seção 4.2-4.3); cobertura ≥ 80% (4.4)
+- [ ] **CI/CD green**: Github Actions pipeline completo (lint, tests, coverage) deve passar
+- [ ] **Sem breaking changes não documentados**: Se alterações de API pública, versão ou permissões amplamente visíveis
+- [ ] **Segurança by Design aplicada**: Validação de entrada (15.1), SQLi mitigation (15.2), XSS protection (15.3), CSRF tokens (15.4)
+
+### 25.1.3. Validações de Consistência (Seções Chave)
+
+- [ ] **Seções 1-9 (Essenciais)**: CI/CD, testes, versionamento, docs e práticas de git refletem mudança proposta
+- [ ] **Seções 10-14 (Funcionalidades)**: Se código toca backup, web services, tasks ou capabilities, verificar seção correspondente
+- [ ] **Seção 15 (Segurança)**: Todos os padrões de validação e contexto aplicados corretamente
+- [ ] **Seção 22 (Logs)**: Novo código inclui logging apropriado com níveis corretos (debug/info/warning/error)
+- [ ] **Seção 23 (Deploy/Monitoramento)**: Se mudança afeta disponibilidade ou métricas, documentar health check correspondente
+
+### 25.1.4. Regra de Parada (Bloqueadores)
+
+**NÃO fazer commit se qualquer um desses falhar:**
+- ❌ Testes falhando
+- ❌ CI/CD não passou
+- ❌ Código sem validação de entrada (seção 15.1)
+- ❌ SQL sem prepared statements (seção 15.2)
+- ❌ Sem documentação de mudança em `CHANGELOG.md`
+- ❌ Breaking change não comunicado em issue/PR descrição
+
+## 25.2. Iteração Contínua (Fluxo de Validação do Agente de IA)
+
+**Protocolo repetível que o agente executa antes de CADA commit:**
+
+### 25.2.1. Fase de Pré-análise (Antes de Modificações)
+
+1. **Ler contexto da mudança**:
+   - Issue/PR descrição e labels
+   - Tipo de mudança (feat/fix/refactor/docs/chore)
+   - Escopo (qual seção do guia é afetada?)
+
+2. **Coletar requisitos aplicáveis**:
+   - Se é mudança de código → seções 4, 15 (testes e segurança)
+   - Se é mudança de schema → seção 16 (banco de dados)
+   - Se é mudança de deploy → seção 23 (deploy/monitoramento)
+   - Se é mudança de permissões → seção 14 (capabilities)
+
+### 25.2.2. Fase de Implementação (Ao Gerar Mudanças)
+
+3. **Gerar código com padrões do guia**:
+   - Aplicar validação (seção 15.1): `required_param()`, `optional_param()`, `clean_param()`
+   - Usar prepared statements (seção 15.2): `$DB->prepare_sql()` ou ORM equivalente
+   - Adicionar sanitização XSS (seção 15.3): `format_text()`, `s()`, `htmlspecialchars()`
+   - Incluir logging (seção 22): `mtrace()` ou eventos Moodle (22.5)
+   - Escrever testes (seção 4.2-4.3): PHPUnit para lógica, Behat para fluxos
+
+4. **Atualizar documentação em paralelo**:
+   - CHANGELOG.md: registrar mudança com versão e tipo
+   - README.md: se afeta features visíveis ou instalação
+   - Arquivo de correspondência: db/access.php, db/tasks.php, db/services.php (conforme aplicável)
+
+### 25.2.3. Fase de Validação (Antes do Commit)
+
+5. **Rodar checklist de rastreabilidade completo** (seção 25.1):
+   - [ ] Testes passam localmente
+   - [ ] CI/CD verde (GitHub Actions)
+   - [ ] Documentação sincronizada
+   - [ ] Segurança aplicada
+   - [ ] Nenhum bloqueador (seção 25.1.4)
+
+6. **Executar validações de consistency**:
+   ```bash
+   # Verificar índice do guia (sem duplicações, âncoras corretas)
+   # Verificar CHANGELOG.md contra arquivo code review
+   # Verificar tests coverage ≥ 80%
+   # Verificar nenhum TODO/FIXME deixado sem contexto
+   ```
+
+### 25.2.4. Fase de Commit (Após Validação OK)
+
+7. **Gerar mensagem de commit** no formato Conventional Commits (seção 5.4):
+   ```
+   <type>(<scope>): <subject>
+   
+   <body>
+   
+   Closes #<issue>
+   Co-authored-by: <if-human-involved>
+   ```
+   - Exemplo: `feat(security): add input validation for user_data field`
+
+8. **Inclusões obrigatórias na mensagem**:
+   - Qual seção do guia foi aplicada
+   - Teste/CI confirmado
+   - Se breaking change, marcar com `BREAKING CHANGE:` no body
+
+9. **Post-commit verification**:
+   - Push para branch de feature/fix
+   - Aguardar CI/CD rodar completamente (~5-10 min)
+   - Se falhada, reverter, corrigir e reiniciar a iteração
+
+### 25.2.5. Ciclo Contínuo de Melhoria
+
+**Após primeira release ou delta significativo:**
+
+- Revisar logs de commit e erros de CI/CD
+- Se padrão quebrado recorrente encontrado → atualizar guia (seção aplicável)
+- Adicionar exemplo real ao guia (como fez tiny_justify em seções 4.3, 5.4.3)
+- Executar "Iteração Contínua" novamente para próximo sprint
+
+### 25.2.6. Critério de Sucesso
+
+Um commit gerado pelo agente é **válido** quando:
+
+✅ Todos os checkboxes de 25.1.4 estão marcados  
+✅ Testes locais passam  
+✅ CI/CD pipeline verde  
+✅ CHANGELOG.md atualizado  
+✅ Mensagem de commit segue Conventional Commits  
+✅ Nenhuma seção do guia ignorada (25.1.3)  
+
+Se qualquer critério falhar → voltar a 25.2.3 (Fase de Validação)
 
 **Padrão terminológico adotado neste guia**:
 
