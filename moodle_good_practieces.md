@@ -61,6 +61,32 @@ Este documento consolida as melhores práticas para desenvolvimento de plugins M
   - [9.1. Antes de fazer uma release\*\*:](#91-antes-de-fazer-uma-release)
   - [9.2. Release Script Rápido](#92-release-script-rápido)
 - [10. Referências](#10-referências)
+- [11. Backup/Restore](#11-backuprestore)
+  - [11.1. Matriz de Recomendações por Tipo de Plugin](#111-matriz-de-recomendações-por-tipo-de-plugin)
+  - [11.2. Estrutura de Arquivos](#112-estrutura-de-arquivos)
+  - [11.3. Arquivo `backup_plugintype_pluginname_activity.class.php`](#113-arquivo-backup_plugintype_pluginname_activityclassphp)
+  - [11.4. Arquivo `restore_plugintype_pluginname_activity.class.php`](#114-arquivo-restore_plugintype_pluginname_activityclassphp)
+- [12. External Service (API WEB SERVICE)](#12-external-service-api-web-service)
+  - [12.1. Estrutura de Arquivos](#121-estrutura-de-arquivos)
+  - [12.2. Arquivo `db/services.php`](#122-arquivo-dbservicesphp)
+  - [12.3. Arquivo `classes/external/api.php`](#123-arquivo-classesexternalapiphp)
+  - [12.4. Ativar o Web Service](#124-ativar-o-web-service)
+  - [12.5. Chamar Web Service (Exemplo REST)](#125-chamar-web-service-exemplo-rest)
+- [13. Tasks (Cron Jobs)](#13-tasks-cron-jobs)
+  - [13.1. Arquivo `db/tasks.php`](#131-arquivo-dbtasksphp)
+  - [13.2. Scheduled Task Class](#132-scheduled-task-class)
+  - [13.3. Ad Hoc Task Class](#133-ad-hoc-task-class)
+  - [13.4. Executar Ad Hoc Task Programaticamente](#134-executar-ad-hoc-task-programaticamente)
+  - [13.5. Cleanup Task (Exemplo Prático)](#135-cleanup-task-exemplo-prático)
+- [14. Capabilities (Permissões)](#14-capabilities-permissões)
+  - [14.1. Arquivo `db/access.php`](#141-arquivo-dbaccessphp)
+  - [14.2. Usando Capabilities no Código](#142-usando-capabilities-no-código)
+  - [14.3. Nomes Convention para Capabilities](#143-nomes-convention-para-capabilities)
+  - [14.4. Context Levels](#144-context-levels)
+  - [14.5. Captype (Tipo de Permission)](#145-captype-tipo-de-permission)
+- [15. Versão e Finalização](#15-versão-e-finalização)
+  - [15.1. Checklist de Rastreabilidade](#151-checklist-de-rastreabilidade)
+  - [15.2. Iteração Contínua](#152-iteração-contínua)
 
 # 1. Visão Geral
 
@@ -1166,8 +1192,826 @@ echo "✅ Release $VERSION published!"
 - [Semantic Versioning](https://semver.org/)
 - [Conventional Commits](https://www.conventionalcommits.org/)
 
---- 
 
+# 11. Backup/Restore
+
+**O que é**: Sistema que permite exportar e restaurar dados do plugin em backups de cursos, atividades ou site.
+
+**Quando é necessário**: Quando o plugin armazena dados que precisam ser preservados em backups.
+
+## 11.1. Matriz de Recomendações por Tipo de Plugin
+
+| Tipo | Necessidade | Quando | Exemplo |
+|------|-------------|--------|---------|
+| `mod_` | ⭐⭐⭐ Obrigatório | Sempre | Atividade de quiz custom |
+| `block_` | ⭐⭐ Recomendado | Se tem dados do bloco | Bloco com configurações |
+| `enrol_` | ⭐⭐ Recomendado | Se tem dados além do padrão | Inscrição customizada |
+| `qtype_` | ⭐⭐ Recomendado | Se tem tabelas próprias | Tipo de questão custom |
+| `format_` | ⭐ Recomendado | Se armazena dados | Formato de curso custom |
+| `report_` | ⭐ Recomendado | Se grava dados persistentes | Relatório com cache |
+| `tool_` | ⭐ Recomendado | Se tem configs estruturais | Ferramenta de configuração |
+| `local_` | ⭐ Recomendado | Se tem dados de curso | Plugin local com dados |
+| `theme_` | ❌ Desnecessário | Nunca | Temas são reinstalados |
+
+## 11.2. Estrutura de Arquivos
+
+```
+plugin/
+├── backup/
+│   ├── moodle2/
+│   │   ├── backup_plugintype_pluginname_activity.class.php
+│   │   ├── backup_plugintype_pluginname_block.class.php
+│   │   └── restore_plugintype_pluginname_activity.class.php
+│   └── moodle2/
+└── db/
+    ├── install.php
+    └── upgrade.php
+```
+
+## 11.3. Arquivo `backup_plugintype_pluginname_activity.class.php`
+
+```php
+<?php
+/**
+ * Backup activity class for your_plugin.
+ *
+ * @package    mod_your_plugin
+ * @category   backup
+ * @copyright  2026 Your Name
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+defined('MOODLE_INTERNAL') || die();
+
+require_once($CFG->dirroot . '/mod/your_plugin/backup/moodle2/backup_your_plugin_activity.class.php');
+require_once($CFG->dirroot . '/mod/your_plugin/backup/moodle2/backup_your_plugin_stepslib.php');
+require_once($CFG->dirroot . '/mod/your_plugin/backup/moodle2/backup_your_plugin_settingslib.php');
+
+class backup_mod_your_plugin_activity extends backup_activity_structure_step {
+
+    protected function define_structure() {
+        // Define backup's XML structure
+        $plugin = new backup_nested_element('your_plugin', ['id'], [
+            'name',
+            'intro',
+            'introformat',
+            'version',
+            'timecreated',
+            'timemodified',
+        ]);
+
+        // Define subelements for related data
+        $attempts = new backup_nested_element('attempts');
+        $attempt = new backup_nested_element('attempt', ['id'], [
+            'userid',
+            'attemptno',
+            'sumgrades',
+            'timefinish',
+        ]);
+
+        // Build tree
+        $plugin->add_child($attempts);
+        $attempts->add_child($attempt);
+
+        // Define sources
+        $plugin->set_source_table('your_plugin', ['id' => backup::VAR_ACTIVITYID]);
+        $attempt->set_source_table('your_plugin_attempts', ['your_pluginid' => backup::VAR_PARENTID]);
+
+        // Define IDs
+        $attempt->set_source_alias('userid', 'userid');
+
+        return $plugin;
+    }
+}
+```
+
+## 11.4. Arquivo `restore_plugintype_pluginname_activity.class.php`
+
+```php
+<?php
+/**
+ * Restore activity class for your_plugin.
+ *
+ * @package    mod_your_plugin
+ * @category   backup
+ * @copyright  2026 Your Name
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+defined('MOODLE_INTERNAL') || die();
+
+require_once($CFG->dirroot . '/mod/your_plugin/restore/moodle2/restore_your_plugin_activity.class.php');
+require_once($CFG->dirroot . '/mod/your_plugin/restore/moodle2/restore_your_plugin_stepslib.php');
+require_once($CFG->dirroot . '/mod/your_plugin/restore/moodle2/restore_your_plugin_settingslib.php');
+
+class restore_mod_your_plugin_activity extends restore_activity_structure_step {
+
+    protected function define_structure() {
+        $paths = [];
+
+        // Main activity element
+        $paths[] = new restore_path_element('your_plugin', '/activity/your_plugin');
+        
+        // Attempts
+        $paths[] = new restore_path_element('your_plugin_attempt', '/activity/your_plugin/attempts/attempt');
+
+        return $paths;
+    }
+
+    protected function process_your_plugin($data) {
+        global $DB;
+
+        $data = (object)$data;
+        $data->course = $this->get_courseid();
+
+        $newid = $DB->insert_record('your_plugin', $data);
+        $this->set_mapping('your_plugin', $data->id, $newid);
+    }
+
+    protected function process_your_plugin_attempt($data) {
+        global $DB;
+
+        $data = (object)$data;
+        $data->your_pluginid = $this->get_new_parentid('your_plugin');
+        $data->userid = $this->get_mappingid('user', $data->userid);
+
+        $newid = $DB->insert_record('your_plugin_attempts', $data);
+        $this->set_mapping('your_plugin_attempt', $data->id, $newid);
+    }
+
+    protected function after_execute() {
+        // Adicione lógica pós-restauração aqui se necessário
+    }
+}
+```
+
+# 12. External Service (API WEB SERVICE)
+
+**O que é**: Sistema que permite acessar funcionalidades do plugin através de APIs web (REST, XML-RPC, SOAP).
+
+**Quando é necessário**: Quando o plugin deve ser integrado com sistemas externos ou aplicações mobile.
+
+## 12.1. Estrutura de Arquivos
+
+```
+plugin/
+├── db/
+│   ├── services.php          # Define os serviços
+│   └── external_functions.php # Implementa as funções
+└── externallib.php           # Classes com a lógica
+```
+
+## 12.2. Arquivo `db/services.php`
+
+Define quais funções são expostas como web service:
+
+```php
+<?php
+/**
+ * Web service definitions for your_plugin.
+ *
+ * @package    your_plugin
+ * @copyright  2026 Your Name
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+defined('MOODLE_INTERNAL') || die();
+
+$functions = [
+    'your_plugin_get_items' => [
+        'classname'    => 'your_plugin\\external\\api',
+        'methodname'   => 'get_items',
+        'classpath'    => 'your_plugin/external/api.php',
+        'description'  => 'Returns a list of items',
+        'type'         => 'read',
+        'ajax'         => true,
+        'capabilities' => 'moodle/course:view',
+    ],
+
+    'your_plugin_create_item' => [
+        'classname'    => 'your_plugin\\external\\api',
+        'methodname'   => 'create_item',
+        'classpath'    => 'your_plugin/external/api.php',
+        'description'  => 'Creates a new item',
+        'type'         => 'write',
+        'ajax'         => false,
+        'capabilities' => 'your_plugin/manage:items',
+    ],
+
+    'your_plugin_delete_item' => [
+        'classname'    => 'your_plugin\\external\\api',
+        'methodname'   => 'delete_item',
+        'classpath'    => 'your_plugin/external/api.php',
+        'description'  => 'Deletes an item',
+        'type'         => 'write',
+        'ajax'         => false,
+        'capabilities' => 'your_plugin/manage:items',
+    ],
+];
+```
+
+## 12.3. Arquivo `classes/external/api.php`
+
+Implementa as funções web service:
+
+```php
+<?php
+/**
+ * Web service functions for your_plugin.
+ *
+ * @package    your_plugin
+ * @copyright  2026 Your Name
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+namespace your_plugin\external;
+
+defined('MOODLE_INTERNAL') || die();
+
+require_once($CFG->libdir . '/externallib.php');
+
+class api extends \external_api {
+
+    /**
+     * get_items parameters
+     */
+    public static function get_items_parameters() {
+        return new \external_function_parameters([
+            'courseid' => new \external_value(PARAM_INT, 'Course ID'),
+            'limit'    => new \external_value(PARAM_INT, 'Items limit', VALUE_DEFAULT, 10),
+            'offset'   => new \external_value(PARAM_INT, 'Items offset', VALUE_DEFAULT, 0),
+        ]);
+    }
+
+    /**
+     * get_items return value
+     */
+    public static function get_items_returns() {
+        return new \external_single_structure([
+            'items' => new \external_multiple_structure(
+                new \external_single_structure([
+                    'id'   => new \external_value(PARAM_INT, 'Item ID'),
+                    'name' => new \external_value(PARAM_TEXT, 'Item name'),
+                    'description' => new \external_value(PARAM_TEXT, 'Item description'),
+                ])
+            ),
+            'total' => new \external_value(PARAM_INT, 'Total items count'),
+        ]);
+    }
+
+    /**
+     * Get items from course
+     */
+    public static function get_items($courseid, $limit = 10, $offset = 0) {
+        global $DB;
+
+        // Validate context and capability
+        $context = \context_course::instance($courseid);
+        self::validate_context($context);
+        require_capability('moodle/course:view', $context);
+
+        // Get items from database
+        $items = $DB->get_records('your_plugin_items', 
+            ['courseid' => $courseid],
+            'timecreated DESC',
+            '*',
+            $offset,
+            $limit
+        );
+
+        $total = $DB->count_records('your_plugin_items', ['courseid' => $courseid]);
+
+        $result = [
+            'items' => [],
+            'total' => $total,
+        ];
+
+        foreach ($items as $item) {
+            $result['items'][] = [
+                'id'          => $item->id,
+                'name'        => $item->name,
+                'description' => $item->description,
+            ];
+        }
+
+        return $result;
+    }
+
+    /**
+     * create_item parameters
+     */
+    public static function create_item_parameters() {
+        return new \external_function_parameters([
+            'courseid'    => new \external_value(PARAM_INT, 'Course ID'),
+            'name'        => new \external_value(PARAM_TEXT, 'Item name'),
+            'description' => new \external_value(PARAM_TEXT, 'Item description'),
+        ]);
+    }
+
+    /**
+     * create_item return value
+     */
+    public static function create_item_returns() {
+        return new \external_single_structure([
+            'id'   => new \external_value(PARAM_INT, 'Item ID'),
+            'name' => new \external_value(PARAM_TEXT, 'Item name'),
+        ]);
+    }
+
+    /**
+     * Create new item
+     */
+    public static function create_item($courseid, $name, $description) {
+        global $DB;
+
+        // Validate context and capability
+        $context = \context_course::instance($courseid);
+        self::validate_context($context);
+        require_capability('your_plugin/manage:items', $context);
+
+        // Validate input
+        $name = clean_param($name, PARAM_TEXT);
+        $description = clean_param($description, PARAM_TEXT);
+
+        if (empty($name)) {
+            throw new \invalid_parameter_exception('Name is required');
+        }
+
+        // Create item
+        $item = new \stdClass();
+        $item->courseid = $courseid;
+        $item->name = $name;
+        $item->description = $description;
+        $item->timecreated = time();
+        $item->timemodified = time();
+
+        $itemid = $DB->insert_record('your_plugin_items', $item);
+
+        return [
+            'id'   => $itemid,
+            'name' => $name,
+        ];
+    }
+
+    /**
+     * delete_item parameters
+     */
+    public static function delete_item_parameters() {
+        return new \external_function_parameters([
+            'itemid' => new \external_value(PARAM_INT, 'Item ID'),
+        ]);
+    }
+
+    /**
+     * delete_item return value
+     */
+    public static function delete_item_returns() {
+        return new \external_value(PARAM_BOOL, 'Success');
+    }
+
+    /**
+     * Delete item
+     */
+    public static function delete_item($itemid) {
+        global $DB;
+
+        // Get item and validate capability
+        $item = $DB->get_record('your_plugin_items', ['id' => $itemid], '*', MUST_EXIST);
+        
+        $context = \context_course::instance($item->courseid);
+        self::validate_context($context);
+        require_capability('your_plugin/manage:items', $context);
+
+        // Delete item
+        $DB->delete_records('your_plugin_items', ['id' => $itemid]);
+
+        return true;
+    }
+}
+```
+
+## 12.4. Ativar o Web Service
+
+1. **Admin > Site administration > Plugins > Web services > Manage tokens**
+   - Criar token para usuário com acesso ao plugin
+
+2. **Admin > Site administration > Plugins > Web services > External services**
+   - Habilitar serviços desejados
+
+3. **Admin > Site administration > Development > Web service authentication > REST protocol**
+   - Habilitar REST (ou XML-RPC, SOAP, etc)
+
+## 12.5. Chamar Web Service (Exemplo REST)
+
+```bash
+curl -X POST \
+  'http://moodle.example.com/webservice/rest/server.php' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "wstoken": "YOUR_TOKEN",
+    "wsfunction": "your_plugin_get_items",
+    "moodlewsrestformat": "json",
+    "courseid": 1,
+    "limit": 10
+  }'
+```
+
+# 13. Tasks (Cron Jobs)
+
+**O que são**: Procedimentos executados automaticamente em background pelo Moodle.
+
+**Tipos**:
+- **Ad hoc tasks**: Executadas uma única vez quando marcadas
+- **Scheduled tasks**: Executadas em intervalos regulares
+- **Backup tasks**: Executadas durante backup de curso/atividade
+
+## 13.1. Arquivo `db/tasks.php`
+
+Define as tasks do plugin:
+
+```php
+<?php
+/**
+ * Task definitions for your_plugin.
+ *
+ * @package    your_plugin
+ * @copyright  2026 Your Name
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+defined('MOODLE_INTERNAL') || die();
+
+$tasks = [
+    // Scheduled task: executa a cada hora
+    [
+        'classname' => 'your_plugin\\task\\sync_data',
+        'blocking'  => 0,
+        'minute'    => '0',
+        'hour'      => '*',
+        'day'       => '*',
+        'month'     => '*',
+        'dayofweek' => '*',
+    ],
+
+    // Scheduled task: executa diariamente às 3:00 AM
+    [
+        'classname' => 'your_plugin\\task\\cleanup_old_records',
+        'blocking'  => 0,
+        'minute'    => '0',
+        'hour'      => '3',
+        'day'       => '*',
+        'month'     => '*',
+        'dayofweek' => '*',
+    ],
+
+    // Ad hoc task: pode ser executada manualmente a qualquer hora
+    [
+        'classname' => 'your_plugin\\task\\rebuild_cache',
+        'blocking'  => 0,
+    ],
+];
+```
+
+## 13.2. Scheduled Task Class
+
+File: `classes/task/sync_data.php`
+
+```php
+<?php
+/**
+ * Scheduled task to sync data.
+ *
+ * @package    your_plugin
+ * @copyright  2026 Your Name
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+namespace your_plugin\task;
+
+defined('MOODLE_INTERNAL') || die();
+
+class sync_data extends \core\task\scheduled_task {
+
+    public function get_name() {
+        return get_string('task_sync_data', 'your_plugin');
+    }
+
+    public function execute() {
+        global $DB;
+
+        $this->output->writeln('Starting data sync...');
+
+        try {
+            // 1. Get external data
+            $external_data = $this->fetch_external_data();
+
+            // 2. Process and validate
+            foreach ($external_data as $item) {
+                $this->process_item($item);
+            }
+
+            // 3. Log success
+            mtrace('Data sync completed successfully');
+
+        } catch (\Exception $e) {
+            mtrace('Error during data sync: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+
+    private function fetch_external_data() {
+        // Implementar lógica para obter dados externos
+        // Retornar array de dados
+        return [];
+    }
+
+    private function process_item($item) {
+        global $DB;
+
+        // Validar item
+        if (empty($item->id)) {
+            return;
+        }
+
+        // Verificar se já existe
+        $record = $DB->get_record('your_plugin_items', ['external_id' => $item->id]);
+
+        if ($record) {
+            // Actualizar
+            $record->name = $item->name;
+            $record->timemodified = time();
+            $DB->update_record('your_plugin_items', $record);
+        } else {
+            // Inserir novo
+            $record = new \stdClass();
+            $record->external_id = $item->id;
+            $record->name = $item->name;
+            $record->timecreated = time();
+            $record->timemodified = time();
+            $DB->insert_record('your_plugin_items', $record);
+        }
+    }
+}
+```
+
+## 13.3. Ad Hoc Task Class
+
+File: `classes/task/rebuild_cache.php`
+
+```php
+<?php
+/**
+ * Ad hoc task to rebuild cache.
+ *
+ * @package    your_plugin
+ * @copyright  2026 Your Name
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+namespace your_plugin\task;
+
+defined('MOODLE_INTERNAL') || die();
+
+class rebuild_cache extends \core\task\adhoc_task {
+
+    public function execute() {
+        // Purgar cache
+        $cache = \cache::make('your_plugin', 'items');
+        $cache->purge();
+
+        // Reconstruir cache a partir do banco
+        global $DB;
+        $items = $DB->get_records('your_plugin_items');
+
+        foreach ($items as $item) {
+            $cache->set($item->id, $item);
+        }
+
+        mtrace('Cache rebuilt successfully');
+    }
+}
+```
+
+## 13.4. Executar Ad Hoc Task Programaticamente
+
+```php
+<?php
+// Agendar task ad hoc para executar assim que possível
+$task = new \your_plugin\task\rebuild_cache();
+\core\task\manager::queue_adhoc_task($task);
+
+// Agendar task ad hoc com delay (5 minutos)
+$task = new \your_plugin\task\rebuild_cache();
+$task->set_next_run_time(time() + 300);
+\core\task\manager::queue_adhoc_task($task);
+```
+
+## 13.5. Cleanup Task (Exemplo Prático)
+
+File: `classes/task/cleanup_old_records.php`
+
+```php
+<?php
+/**
+ * Scheduled task to cleanup old records.
+ *
+ * @package    your_plugin
+ * @copyright  2026 Your Name
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+namespace your_plugin\task;
+
+defined('MOODLE_INTERNAL') || die();
+
+class cleanup_old_records extends \core\task\scheduled_task {
+
+    public function get_name() {
+        return get_string('task_cleanup', 'your_plugin');
+    }
+
+    public function execute() {
+        global $DB;
+
+        // Remover registros com mais de 1 ano
+        $oneyearago = time() - (365 * 24 * 60 * 60);
+        
+        $deleted = $DB->delete_records_select(
+            'your_plugin_logs',
+            'timecreated < ?',
+            [$oneyearago]
+        );
+
+        mtrace("Deleted $deleted old records");
+    }
+}
+```
+
+# 14. Capabilities (Permissões)
+
+**O que são**: Sistema de permissões granulares que controla o que cada usuário pode fazer no plugin.
+
+**Onde definir**: `db/access.php`
+
+## 14.1. Arquivo `db/access.php`
+
+Define as capabilities do plugin:
+
+```php
+<?php
+/**
+ * Capabilities for your_plugin.
+ *
+ * @package    your_plugin
+ * @copyright  2026 Your Name
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+defined('MOODLE_INTERNAL') || die();
+
+$capabilities = [
+
+    // Visualizar plugin
+    'your_plugin/view' => [
+        'captype'      => 'read',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes'   => [
+            'teacher'        => CAP_ALLOW,
+            'editingteacher' => CAP_ALLOW,
+            'student'        => CAP_ALLOW,
+            'guest'          => CAP_PREVENT,
+        ],
+    ],
+
+    // Gerenciar items
+    'your_plugin/manage:items' => [
+        'captype'      => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes'   => [
+            'teacher'        => CAP_ALLOW,
+            'editingteacher' => CAP_ALLOW,
+            'student'        => CAP_PREVENT,
+        ],
+    ],
+
+    // Deletar items
+    'your_plugin/delete:items' => [
+        'captype'      => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes'   => [
+            'editingteacher' => CAP_ALLOW,
+            'teacher'        => CAP_PREVENT,
+        ],
+        'clonepermissionsfrom' => 'moodle/course:update',
+    ],
+
+    // Visualizar relatórios
+    'your_plugin/viewreports' => [
+        'captype'      => 'read',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes'   => [
+            'editingteacher' => CAP_ALLOW,
+            'teacher'        => CAP_ALLOW,
+            'student'        => CAP_PREVENT,
+        ],
+    ],
+
+    // Gerenciar plugin (config global)
+    'your_plugin/manage' => [
+        'captype'      => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes'   => [
+            'manager' => CAP_ALLOW,
+        ],
+        'clonepermissionsfrom' => 'moodle/site:config',
+    ],
+];
+```
+
+## 14.2. Usando Capabilities no Código
+
+```php
+<?php
+// Verificar se usuário tem capability
+$context = context_course::instance($courseid);
+
+// Check requer (lança exception se não tem)
+require_capability('your_plugin/view', $context);
+
+// Check opcional (retorna bool)
+if (has_capability('your_plugin/manage:items', $context)) {
+    // Mostrar botão de gerenciar
+}
+
+// Get all users with capability em contexto
+$users = get_users_by_capability($context, 'your_plugin/view');
+
+// Verificar contra usuário específico
+if (user_has_role_assignment($userid, $roleid, $contextid)) {
+    // User tem role espeífica
+}
+```
+
+## 14.3. Nomes Convention para Capabilities
+
+```
+your_plugin/<actions>
+
+Exemplos:
+- your_plugin/view                 (ler dados)
+- your_plugin/create:items         (criar items)
+- your_plugin/edit:items           (editar items)
+- your_plugin/delete:items         (deletar items)
+- your_plugin/manage:settings      (gerenciar configurações)
+- your_plugin/download:reports     (download relatórios)
+- your_plugin/viewhidden           (ver dados ocultos)
+```
+
+## 14.4. Context Levels
+
+| Context | Nível | Uso |
+|---------|-------|-----|
+| `CONTEXT_SYSTEM` | Global | Permissões globais do site |
+| `CONTEXT_COURSECAT` | Categoria | Permissões por categoria de curso |
+| `CONTEXT_COURSE` | Curso | Permissões por curso |
+| `CONTEXT_MODULE` | Atividade | Permissões por atividade/módulo |
+| `CONTEXT_BLOCK` | Bloco | Permissões por bloco |
+| `CONTEXT_USER` | Usuário | Permissões de usuário |
+
+## 14.5. Captype (Tipo de Permission)
+
+```
+'captype' => 'read|write'
+
+- read:  Apenas leitura de dados (visualizar, exportar)
+- write: Modificação de dados (criar, editar, deletar)
+```
+
+
+# 15. Versão e Finalização
+
+**Este guia é um documento vivo e deve ser atualizado regularmente.**
+
+## 15.1. Checklist de Rastreabilidade
+
+Antes de publicar uma versão do plugin, verifique:
+
+- [ ] Todas as seções 1-14 foram implementadas (ou documentado por quê não)
+- [ ] Cada seção tem exemplos práticos e código real
+- [ ] Testes are cobrindo todas as funcionalidades principais
+- [ ] Documentação está clara e amigável
+- [ ] Security foi revisada por alguém externo
+- [ ] CHANGELOG.md reflete todas as mudanças
+
+## 15.2. Iteração Contínua
+
+A cada release:
+1. Revisar este guia
+2. Documentar novas práticas aprendidas
+3. Atualizar exemplos se necessário
+4. Compartilhar aprendizados com a comunidade
+
+---
 **Última atualização**: 2026-03-04  
 **Autor**: KelsonCM  
 **Licença**: CC-BY-4.0
