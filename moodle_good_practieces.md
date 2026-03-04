@@ -10,43 +10,42 @@ Este documento consolida as melhores práticas para desenvolvimento de plugins M
 - [1. Visão Geral](#1-visão-geral)
   - [1.1. Princípios Fundamentais](#11-princípios-fundamentais)
   - [1.2. Por Que Isso Importa?](#12-por-que-isso-importa)
-- [2. Case Study: tiny\_justify](#2-case-study-tiny_justify)
-  - [2.1. Contexto](#21-contexto)
-  - [2.2. Timeline de Desenvolvimento Real](#22-timeline-de-desenvolvimento-real)
-    - [2.2.1. Fase 1: Fundação completa](#221-fase-1-fundação-completa)
-    - [2.2.2. Fase 2: Documentação](#222-fase-2-documentação)
-    - [2.2.3. Fase 3: Evolução Contínua](#223-fase-3-evolução-contínua)
-  - [2.3. `CHANGELOG.md`](#23-changelogmd)
-  - [2.4. `CONTRIBUTING.md`](#24-contributingmd)
-  - [2.5. `README.md`](#25-readmemd)
-  - [2.6. `SECURITY.md`](#26-securitymd)
-  - [2.7. `.github/dependabot.yml`](#27-githubdependabotyml)
-  - [2.8. `.github/workflows/moodle-plugin-ci.yml`](#28-githubworkflowsmoodle-plugin-ciyml)
-    - [2.8.1 Exemplo de matrix de testes](#281-exemplo-de-matrix-de-testes)
-    - [2.8.2. Exemplo completo](#282-exemplo-completo)
-  - [2.9. `.github/workflows/release.yml`](#29-githubworkflowsreleaseyml)
-    - [2.9.1 Workflow Completo](#291-workflow-completo)
-    - [2.9.2 \*\*Workflow de Release](#292-workflow-de-release)
-- [3. Sistema de Testes](#3-sistema-de-testes)
-  - [3.1. Behat Tests (Integration/E2E) ⭐ Essencial](#31-behat-tests-integratione2e--essencial)
-  - [3.2. PHPUnit Tests (Unit/Component) 🔧 Recomendado](#32-phpunit-tests-unitcomponent--recomendado)
-    - [3.2.1. Estrutura de Diretório:](#321-estrutura-de-diretório)
-    - [3.2.2. Template Test Class:](#322-template-test-class)
-    - [3.2.3. Running PHPUnit Locally:](#323-running-phpunit-locally)
-    - [3.3. JavaScript/AMD Tests 🧪 Opcional](#33-javascriptamd-tests--opcional)
-    - [3.3.1. Estrutura:](#331-estrutura)
-    - [3.3.2. Template Test:](#332-template-test)
-    - [3.3.3. Exemplo Real (tiny\_justify):](#333-exemplo-real-tiny_justify)
-- [4. Versionamento e Releases](#4-versionamento-e-releases)
-  - [4.1. Sistema de Versionamento Duplo](#41-sistema-de-versionamento-duplo)
-  - [4.2. Sincronização de Versões](#42-sincronização-de-versões)
-  - [4.3. Tags Git e Releases](#43-tags-git-e-releases)
-  - [4.4. Conventional Commits](#44-conventional-commits)
-    - [4.4.1. Formato:](#441-formato)
-    - [4.4.2. Tipos Comuns:](#442-tipos-comuns)
-    - [4.4.3. Exemplos Reais (tiny\_justify):](#443-exemplos-reais-tiny_justify)
-    - [4.4.4. Benefícios:](#444-benefícios)
-- [5. Fluxo Completo de Release](#5-fluxo-completo-de-release)
+  - [1.3. Fundação inicial](#13-fundação-inicial)
+- [2. Documentação](#2-documentação)
+  - [2.1. `CHANGELOG.md`](#21-changelogmd)
+  - [2.2. `CONTRIBUTING.md`](#22-contributingmd)
+  - [2.3. `README.md`](#23-readmemd)
+  - [2.4. `SECURITY.md`](#24-securitymd)
+- [3. CI/CD](#3-cicd)
+  - [3.1. `.github/dependabot.yml`](#31-githubdependabotyml)
+    - [3.1.1 Configuração Básica:](#311-configuração-básica)
+    - [3.1.2 Configuração Avançada\*\*:](#312-configuração-avançada)
+  - [3.2. `.github/workflows/moodle-plugin-ci.yml`](#32-githubworkflowsmoodle-plugin-ciyml)
+    - [3.2.1 Exemplo de matrix de testes](#321-exemplo-de-matrix-de-testes)
+    - [3.2.2. Exemplo completo](#322-exemplo-completo)
+  - [3.3. `.github/workflows/release.yml`](#33-githubworkflowsreleaseyml)
+      - [3.3.1 Workflow Completo](#331-workflow-completo)
+      - [3.3.2 \*\*Workflow de Release](#332-workflow-de-release)
+- [4. Tests](#4-tests)
+  - [4.1. Behat Tests (Integration/E2E) ⭐ Essencial](#41-behat-tests-integratione2e--essencial)
+  - [4.2. PHPUnit Tests (Unit/Component) 🔧 Recomendado](#42-phpunit-tests-unitcomponent--recomendado)
+    - [4.2.1. Estrutura de Diretório:](#421-estrutura-de-diretório)
+    - [4.2.2. Template Test Class:](#422-template-test-class)
+    - [4.2.3. Running PHPUnit Locally:](#423-running-phpunit-locally)
+  - [4.3. JavaScript/AMD Tests 🧪 Opcional](#43-javascriptamd-tests--opcional)
+    - [4.3.1. Estrutura:](#431-estrutura)
+    - [4.3.2. Template Test:](#432-template-test)
+    - [4.3.3. Exemplo Real (tiny\_justify):](#433-exemplo-real-tiny_justify)
+- [5. Versionamento e Releases](#5-versionamento-e-releases)
+  - [5.1. Sistema de Versionamento Duplo](#51-sistema-de-versionamento-duplo)
+  - [5.2. Sincronização de Versões](#52-sincronização-de-versões)
+  - [5.3. Tags Git e Releases](#53-tags-git-e-releases)
+  - [5.4. Conventional Commits](#54-conventional-commits)
+    - [5.4.1. Formato:](#541-formato)
+    - [5.4.2. Tipos Comuns:](#542-tipos-comuns)
+    - [5.4.3. Exemplos Reais (tiny\_justify):](#543-exemplos-reais-tiny_justify)
+    - [5.4.4. Benefícios:](#544-benefícios)
+  - [5.5. Fluxo Completo de Release](#55-fluxo-completo-de-release)
 
 # 1. Visão Geral
 
@@ -74,19 +73,9 @@ Um plugin Moodle moderno e profissional deve seguir estes princípios desde o pr
 | **Segurança**        | Vulnerabilidades descobertas tarde | Preventiva e documentada |
 
 
-# 2. Case Study: tiny_justify
+## 1.3. Fundação inicial
 
-## 2.1. Contexto
-
-O **tiny_justify** é um plugin TinyMCE para Moodle que adiciona botão de justificação de texto. Apesar de ser um plugin relativamente simples (~800 linhas de código), foi desenvolvido seguindo rigorosamente as melhores práticas da indústria.
-
-## 2.2. Timeline de Desenvolvimento Real
-
-Análise do histórico git revelou uma metodologia estruturada:
-
-### 2.2.1. Fase 1: Fundação completa
-
-**Em um único commit inicial, foram criados**:
+**Instrução crítica**: Criar infraestrutura de CI/CD **no primeiro commit**, não depois.
 
 | Categoria | Arquivos                                       |
 | --------- | ---------------------------------------------- |
@@ -97,30 +86,16 @@ Análise do histórico git revelou uma metodologia estruturada:
 | Lang      | `lang/en/`, `lang/pt_br/`                      |
 | Config    | `version.php`, `styles.css`, `pix/`            |
 
-**Lição Crítica**: Criar infraestrutura de CI/CD **no primeiro commit**, não depois.
+# 2. Documentação
 
-### 2.2.2. Fase 2: Documentação
-
-Adicionados em commit separado:
-1. ✅ `README.md`
-2. ✅ `SECURITY.md`
-3. ✅ `CONTRIBUTING.md`
-4. ✅ `CHANGELOG.md`
+**Instrução crítica**: A documentação é crítica e deve criadas no **no primeiro commit**, não como afterthought, e atualizadas a cada iteração, sendo o mínimo:
+1. ✅ `CHANGELOG.md`
+2. ✅ `CONTRIBUTING.md`
+3. ✅ `README.md`
+4. ✅ `SECURITY.md`
 5. ✅ `LICENSE.md` - Necessariamente em GPLv3
 
-**Lição**: Documentação crítica criadas no **no primeiro commit**, não como afterthought, e atualizadas a cada iteração.
-
-### 2.2.3. Fase 3: Evolução Contínua
-
-Após releases iniciais, 21 iterações de melhorias:
-- Suporte a PHP 8.4 e Moodle 5.1
-- Atualização PostgreSQL 15, MariaDB 10.11
-- Validação automática de release
-- Upload para Moodle Plugin Directory
-
-**Lição**: CI permite iteração rápida e confiante.
-
-## 2.3. `CHANGELOG.md`
+## 2.1. `CHANGELOG.md`
 
 **O que é**: Histórico estruturado de todas as mudanças por versão.
 
@@ -169,7 +144,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Add support for PHP 8.4 and Moodle 5.1
 ```
 
-## 2.4. `CONTRIBUTING.md`
+## 2.2. `CONTRIBUTING.md`
 
 **O que é**: Guia completo para contribuidores externos e futuros mantenedores.
 
@@ -198,7 +173,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 >       7. Check upgrade savepoints: `savepoints`
 >       8. Mustache Lint: `mustache`
 
-## 2.5. `README.md`
+## 2.3. `README.md`
 
 1. Overview
 2. Requirements
@@ -209,7 +184,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 7. Contributing
 8. Support
 
-## 2.6. `SECURITY.md`
+## 2.4. `SECURITY.md`
 
 **Quando é essencial**:
 - ✅ Plugin manipula dados de usuário
@@ -221,7 +196,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 **Quando é opcional, ainda que recomendado**:
 - ⚠️ Plugin puramente visual (botões de editor, temas simples)
 - ⚠️ Plugin read-only sem lógica de negócio
-
 
 **Seções Obrigatórias**:
 
@@ -296,11 +270,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
      2.  **Status**: Active
      3.  **Maintainer**: [KelsonCM](https://github.com/kelsoncm/)
 
-## 2.7. `.github/dependabot.yml`
+# 3. CI/CD
+
+## 3.1. `.github/dependabot.yml`
 
 **Por que é importante**: Mantém dependências seguras automaticamente.
 
-**Configuração Básica**:
+### 3.1.1 Configuração Básica:
 ```yaml
 version: 2
 updates:
@@ -311,7 +287,7 @@ updates:
     open-pull-requests-limit: 5
 ```
 
-**Configuração Avançada**:
+### 3.1.2 Configuração Avançada**:
 ```yaml
 version: 2
 updates:
@@ -332,11 +308,11 @@ updates:
 ```
 
 
-## 2.8. `.github/workflows/moodle-plugin-ci.yml`
+## 3.2. `.github/workflows/moodle-plugin-ci.yml`
 
 **Objetivo**: Testar plugin contra múltiplas versões de Moodle, PHP e databases automaticamente.
 
-### 2.8.1 Exemplo de matrix de testes
+### 3.2.1 Exemplo de matrix de testes
 
 | PHP | Moodle 4.5 | Moodle 5.0 | Moodle 5.1 | Databases      |
 | --- | ---------- | ---------- | ---------- | -------------- |
@@ -347,7 +323,7 @@ updates:
 
 **Resultado**: ~20 combinações testadas automaticamente em cada push!
 
-### 2.8.2. Exemplo completo
+### 3.2.2. Exemplo completo
 
 ```yaml
 name: Moodle Plugin CI
@@ -480,7 +456,7 @@ jobs:
         run: moodle-plugin-ci behat --profile chrome
 ```
 
-## 2.9. `.github/workflows/release.yml`
+## 3.3. `.github/workflows/release.yml`
 
 **Objetivo**: Automatizar criação de releases, empacotamento ZIP, e upload para GitHub Releases e para Moodle Plugin Directory.
 
@@ -490,7 +466,7 @@ jobs:
 3. ✅ ZIP contém estrutura correta de diretório
 4. ✅ Upload confirma sucesso antes de marcar release
 
-### 2.9.1 Workflow Completo
+#### 3.3.1 Workflow Completo
 
 ```yaml
 name: Release
@@ -584,7 +560,7 @@ jobs:
           fi
 ```
 
-### 2.9.2 **Workflow de Release
+#### 3.3.2 **Workflow de Release
 
 **1. Update `version.php`**
 
@@ -623,9 +599,9 @@ git push origin main --tags
 > **Objetivo**: Zero erros humanos em releases!
 
 
-# 3. Sistema de Testes
+# 4. Tests 
 
-## 3.1. Behat Tests (Integration/E2E) ⭐ Essencial
+## 4.1. Behat Tests (Integration/E2E) ⭐ Essencial
 
 **O que são**: Testes de integração em linguagem natural (Gherkin) que validam fluxos completos de usuário.
 
@@ -698,11 +674,11 @@ php admin/tool/behat/cli/run.php --tags=@your_plugin
 php admin/tool/behat/cli/run.php --name="Feature works for teacher"
 ```
 
-## 3.2. PHPUnit Tests (Unit/Component) 🔧 Recomendado
+## 4.2. PHPUnit Tests (Unit/Component) 🔧 Recomendado
 
 **O que são**: Testes unitários de classes e funções PHP isoladamente.
 
-### 3.2.1. Estrutura de Diretório:
+### 4.2.1. Estrutura de Diretório:
 ```
 tests/
 ├── your_class_test.php
@@ -711,7 +687,7 @@ tests/
     └── test_data.xml
 ```
 
-### 3.2.2. Template Test Class:
+### 4.2.2. Template Test Class:
 ```php
 <?php
 namespace your_plugin;
@@ -779,7 +755,7 @@ final class your_class_test extends \advanced_testcase {
 }
 ```
 
-### 3.2.3. Running PHPUnit Locally:
+### 4.2.3. Running PHPUnit Locally:
 ```bash
 # All tests
 vendor/bin/phpunit
@@ -794,11 +770,11 @@ vendor/bin/phpunit path/to/your_test.php
 vendor/bin/phpunit --coverage-html coverage/
 ```
 
-### 3.3. JavaScript/AMD Tests 🧪 Opcional
+## 4.3. JavaScript/AMD Tests 🧪 Opcional
 
 **Quando é necessário**: Se seu plugin tem módulos AMD com lógica complexa.
 
-### 3.3.1. Estrutura:
+### 4.3.1. Estrutura:
 ```
 tests/
 └── javascript/
@@ -806,7 +782,7 @@ tests/
     └── index.js
 ```
 
-### 3.3.2. Template Test:
+### 4.3.2. Template Test:
 ```javascript
 import {describe, it, expect, beforeEach} from '@jest/globals';
 import {yourModule} from 'your_plugin/your_module';
@@ -837,7 +813,7 @@ describe('your_plugin/your_module', () => {
 });
 ```
 
-### 3.3.3. Exemplo Real (tiny_justify):
+### 4.3.3. Exemplo Real (tiny_justify):
 ```javascript
 describe('TinyMCE Justify Plugin', () => {
     it('should register plugin correctly', () => {
@@ -858,9 +834,9 @@ describe('TinyMCE Justify Plugin', () => {
 });
 ```
 
-# 4. Versionamento e Releases
+# 5. Versionamento e Releases
 
-## 4.1. Sistema de Versionamento Duplo
+## 5.1. Sistema de Versionamento Duplo
 
 Moodle usa um sistema duplo de versionamento:
 
@@ -888,7 +864,7 @@ $plugin->release = '1.0.22';  // X.Y.Z
 
 **Propósito**: Comunicação com usuários finais.
 
-## 4.2. Sincronização de Versões
+## 5.2. Sincronização de Versões
 
 **Prática Recomendada** (validada em release.yml):
 
@@ -906,7 +882,7 @@ $plugin->release  = '1.0.22';  // 23 != 22
 
 **Por quê?**: Garante rastreabilidade entre versão interna e externa.
 
-## 4.3. Tags Git e Releases
+## 5.3. Tags Git e Releases
 
 **Convenção**:
 ```bash
@@ -919,13 +895,13 @@ git tag -a 1.0.22 -m "Release 1.0.22"
 
 **release.yml valida**: `$plugin->release` == tag name
 
-## 4.4. Conventional Commits
+## 5.4. Conventional Commits
 
-### 4.4.1. Formato:
+### 5.4.1. Formato:
 
 User o modelo: `<type>(<scope>): <subject>`
 
-### 4.4.2. Tipos Comuns:
+### 5.4.2. Tipos Comuns:
 ```
 feat: Nova funcionalidade
 fix: Correção de bug
@@ -938,7 +914,7 @@ perf: Melhorias de performance
 ci: Mudanças em CI/CD
 ```
 
-### 4.4.3. Exemplos Reais (tiny_justify):
+### 5.4.3. Exemplos Reais (tiny_justify):
 ```
 feat: enhance alignment options with justify and nested menu integration
 fix: update PostgreSQL version to 15 and enable fail-fast strategy in CI workflow
@@ -947,13 +923,13 @@ chore: bump version for cache invalidation
 docs: update CONTRIBUTING.md with AVA/Docker workflow
 ```
 
-### 4.4.4. Benefícios:
+### 5.4.4. Benefícios:
 - Histórico git legível
 - Changelogs automáticos
 - Semantic versioning automático
 - Facilita code review
 
-# 5. Fluxo Completo de Release
+## 5.5. Fluxo Completo de Release
 
 ```bash
 # 1. Desenvolva e teste localmente
