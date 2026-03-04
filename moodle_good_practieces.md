@@ -16,6 +16,7 @@ Este documento consolida as melhores práticas para desenvolvimento de plugins M
   - [2.2. `CONTRIBUTING.md`](#22-contributingmd)
   - [2.3. `README.md`](#23-readmemd)
   - [2.4. `SECURITY.md`](#24-securitymd)
+      - [Exemplo Mínimo de SECURITY.md](#exemplo-mínimo-de-securitymd)
 - [3. CI/CD](#3-cicd)
   - [3.1. `.github/dependabot.yml`](#31-githubdependabotyml)
     - [3.1.1 Configuração Básica:](#311-configuração-básica)
@@ -24,8 +25,8 @@ Este documento consolida as melhores práticas para desenvolvimento de plugins M
     - [3.2.1 Exemplo de matrix de testes](#321-exemplo-de-matrix-de-testes)
     - [3.2.2. Exemplo completo](#322-exemplo-completo)
   - [3.3. `.github/workflows/release.yml`](#33-githubworkflowsreleaseyml)
-      - [3.3.1 Workflow Completo](#331-workflow-completo)
-      - [3.3.2 \*\*Workflow de Release](#332-workflow-de-release)
+    - [3.3.1 Workflow Completo](#331-workflow-completo)
+    - [3.3.2 Workflow de Release](#332-workflow-de-release)
 - [4. Tests](#4-tests)
   - [4.1. Behat Tests (Integration/E2E) ⭐ Essencial](#41-behat-tests-integratione2e--essencial)
   - [4.2. PHPUnit Tests (Unit/Component) 🔧 Recomendado](#42-phpunit-tests-unitcomponent--recomendado)
@@ -46,6 +47,20 @@ Este documento consolida as melhores práticas para desenvolvimento de plugins M
     - [5.4.3. Exemplos Reais (tiny\_justify):](#543-exemplos-reais-tiny_justify)
     - [5.4.4. Benefícios:](#544-benefícios)
   - [5.5. Fluxo Completo de Release](#55-fluxo-completo-de-release)
+- [6. Git Workflow e Branching](#6-git-workflow-e-branching)
+  - [6.1. Estratégia de Branching (Trunk-Based Development)](#61-estratégia-de-branching-trunk-based-development)
+    - [Estrutura de Branches:](#estrutura-de-branches)
+    - [Naming Convention:](#naming-convention)
+  - [6.2. GitHub Branch Protection Rules](#62-github-branch-protection-rules)
+    - [Exemplo CODEOWNERS:](#exemplo-codeowners)
+- [7. .gitignore Padrão para Plugins Moodle](#7-gitignore-padrão-para-plugins-moodle)
+- [8. Code Review Best Practices](#8-code-review-best-practices)
+  - [8.1. Para Autores de PR](#81-para-autores-de-pr)
+  - [8.2. Para Reviewers](#82-para-reviewers)
+- [9. Pre-Release Checklist](#9-pre-release-checklist)
+  - [9.1. Antes de fazer uma release\*\*:](#91-antes-de-fazer-uma-release)
+  - [9.2. Release Script Rápido](#92-release-script-rápido)
+- [10. Referências](#10-referências)
 
 # 1. Visão Geral
 
@@ -88,7 +103,7 @@ Um plugin Moodle moderno e profissional deve seguir estes princípios desde o pr
 
 # 2. Documentação
 
-**Instrução crítica**: A documentação é crítica e deve criadas no **no primeiro commit**, não como afterthought, e atualizadas a cada iteração, sendo o mínimo:
+**Instrução crítica**: A documentação é crítica e deve ser criada no **primeiro commit**, não como afterthought, e atualizadas a cada iteração, sendo o mínimo:
 1. ✅ `CHANGELOG.md`
 2. ✅ `CONTRIBUTING.md`
 3. ✅ `README.md`
@@ -186,6 +201,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## 2.4. `SECURITY.md`
 
+**O que é**: Documento de segurança que descreve práticas e vulnerabilidades do plugin.
+
 **Quando é essencial**:
 - ✅ Plugin manipula dados de usuário
 - ✅ Plugin executa queries SQL
@@ -199,76 +216,55 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 **Seções Obrigatórias**:
 
-1. Overview
-2. How to Contribute
-3. Supported Versions
-4. Security Properties
-   1. Capability Requirements
-   2. Input Validation & Sanitization
-   3. Context Isolation
-   4. Data Access Control
-   5. User data usage and protection
-   6. etc...
-5. Security Considerations
-   1. Capability-Based Access
-   2. SQL Injection Prevention
-   3. Cross-Site Scripting (XSS) Prevention
-   4. Cross-Site Request Forgery (CSRF) Protection
-   5. etc...
-6. Known Limitations
-7. Reporting a Vulnerability
-   1. Please DO NOT create a public GitHub issue for security vulnerabilities.
-   2. Contact Information
-      1. What to Include
-         1. What to Include
-            1. Description of the vulnerability
-            2. Steps to reproduce (if applicable)
-            3. Impact assessment (e.g., data exposure, privilege escalation)
-            4. Affected versions
-            5. Suggested remediation (optional)
-   3. Response Timeline
-   4. Severity Levels (Critical, High, Medium, Low)
-8. Security Best Practices for Administrators
-   1. Installation & Updates
-      1. Install from official Moodle Plugin Directory or verified source
-      2. Keep Moodle updated to the latest stable release
-      3. Install security patches immediately upon availability
-      4. Test updates in a staging environment first
-    2. Configuration
-       1. Audit which users have `viewparticipants` capability
-       2. Restrict this capability to trusted roles only
-       3. Monitor administrative logs for unusual filter queries
-       4. Consider restricting custom profile fields visible to students
-    3. Monitoring
-       1. Check Moodle logs for failed access attempts
-       2. Review participated user lists periodically
-       3. Monitor database performance impact of filtering operations
- 9. Development & Code Review
-    1. **No Hardcoded Credentials**: Sensitive data is never stored in repository
-    2. **Capability Checks**: Every user-facing action requires capability verification
-    3. **Input Validation**: All user inputs are validated and sanitized
-    4. **Prepared Statements**: All database queries use parameterized queries
-    5. **Error Handling**: Errors are logged but not exposed to users
-    6. **Code Review**: All changes undergo security review before merge
- 10. Dependencies
-     1.  **Moodle**: 4.5.0+
-     2.  **PHP**: 8.1+
-     3.  **Database**: PostgreSQL 15+, MariaDB 10.11+
-     4.  **External libs**: (list)
- 10. Test matrix
-     1.  **Moodle**: 4.5.0, 4.5.0, 4.5.1
-     2.  **PHP**: 8.1, 8.2, 8.3, 8.4
-     3.  **Database**: PostgreSQL 15, MariaDB 10.11
- 11. License
-     1.  GPLv3
- 12. Contact & Support
-     1. **Repository**: This GitHub Repository
-     2. **Bug Reports**: This GitHub Issues
-     3. **Security Reports**: See "Reporting a Vulnerability" section above
- 13. Final notes
-     1.  **Last Updated**: 2026-03-04
-     2.  **Status**: Active
-     3.  **Maintainer**: [KelsonCM](https://github.com/kelsoncm/)
+1. **Supported Versions** - Quais versões do Moodle, PHP, database são suportadas
+2. **Security Properties** - Quais capacidades, validações e controles estão implementados
+3. **Security Considerations** - Análise de riscos e mitigações (SQL injection, XSS, CSRF)
+4. **Security Best Practices for Developers** - Como contribuir com segurança em mente
+5. **Security Best Practices for Administrators** - Como instalar, configurar e monitorar
+6. **Dependencies** - Versões mínimas obrigatórias do Moodle, PHP, database
+7. **Test Matrix** - Quais combinações são testadas
+8. **Reporting a Vulnerability** - Como reportar sem criar issues públicas
+9. **License** - GPLv3
+10. **Contact & Support** - Onde encontrar help
+
+#### Exemplo Mínimo de SECURITY.md
+
+```markdown
+# Security Policy
+
+## Supported Versions
+
+| Version | Support Status     | Until      |
+| ------- | ------------------ | ---------- |
+| 1.0.20+ | Actively Supported | 2027-03-04 |
+| 1.0.0   | End of Life        | 2025-12-31 |
+
+## Security Properties
+
+- **Capabilities**: Uses `moodle/course:viewparticipants` for access control
+- **Input Validation**: All user inputs validated using `required_param()` and `optional_param()`
+- **Database Queries**: All DB queries use parameterized statements via `$DB->prepare()`
+
+## Security Considerations
+
+- **SQL Injection**: Mitigated through parameterized queries
+- **XSS**: Mitigated through Moodle's output filtering
+- **CSRF**: Mitigated through Moodle's CSRF tokens
+
+## Reporting a Vulnerability
+
+**DO NOT** create a GitHub issue for security vulnerabilities.
+
+Email: security@example.com
+
+Include:
+- Description
+- Steps to reproduce
+- Potential impact
+- Affected versions
+
+We respond within 48 hours and patch critical issues within 7 days.
+```
 
 # 3. CI/CD
 
@@ -321,7 +317,7 @@ updates:
 | 8.3 | ✅          | ✅          | ✅          | pgsql, mariadb |
 | 8.4 | ❌          | ✅          | ✅          | pgsql, mariadb |
 
-**Resultado**: ~20 combinações testadas automaticamente em cada push!
+**Resultado**: ~20 combinações testadas automaticamente em cada push! Tempo total ~5min, se fosse linear seria ~120min.
 
 ### 3.2.2. Exemplo completo
 
@@ -466,7 +462,7 @@ jobs:
 3. ✅ ZIP contém estrutura correta de diretório
 4. ✅ Upload confirma sucesso antes de marcar release
 
-#### 3.3.1 Workflow Completo
+### 3.3.1 Workflow Completo
 
 ```yaml
 name: Release
@@ -518,8 +514,10 @@ jobs:
           echo "number=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Build plugin ZIP
+        id: build
+        env:
+          PLUGIN_NAME: ${{ github.event.repository.name }}
         run: |
-          PLUGIN_NAME="your_plugin_name"
           mkdir -p /tmp/build/$PLUGIN_NAME
 
           rsync -a \
@@ -527,25 +525,30 @@ jobs:
             --exclude='.github' \
             --exclude='node_modules' \
             --exclude='.gitignore' \
+            --exclude='tests' \
+            --exclude='vendor' \
             . /tmp/build/$PLUGIN_NAME/
 
           cd /tmp/build
           zip -r "$GITHUB_WORKSPACE/$PLUGIN_NAME-${{ steps.version.outputs.number }}.zip" $PLUGIN_NAME/
+          echo "zipfile=$PLUGIN_NAME-${{ steps.version.outputs.number }}.zip" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ env.PLUGIN_NAME }}-${{ steps.version.outputs.number }}.zip
+          files: ${{ steps.build.outputs.zipfile }}
           generate_release_notes: true
 
       - name: Upload to Moodle Plugin Directory
-        if: ${{ env.HAS_MOODLE_TOKEN == 'true' }}
+        if: ${{ secrets.MOODLE_DIRECTORY_TOKEN != '' }}
         env:
-          HAS_MOODLE_TOKEN: ${{ secrets.MOODLE_DIRECTORY_TOKEN != '' }}
           MOODLE_DIRECTORY_TOKEN: ${{ secrets.MOODLE_DIRECTORY_TOKEN }}
+          PLUGIN_NAME: ${{ github.event.repository.name }}
         run: |
+          ZIPFILE="${PLUGIN_NAME}-${{ steps.version.outputs.number }}.zip"
+          
           RESPONSE=$(curl -s -w "\n%{http_code}" \
-            -F data=@"$GITHUB_WORKSPACE/$PLUGIN_NAME-${{ steps.version.outputs.number }}.zip" \
+            -F data=@"$GITHUB_WORKSPACE/$ZIPFILE" \
             "https://moodle.org/webservice/upload.php?token=$MOODLE_DIRECTORY_TOKEN")
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
@@ -558,9 +561,11 @@ jobs:
             echo "::error::Failed to upload to Moodle Plugin Directory"
             exit 1
           fi
+          
+          echo "✅ Successfully published to Moodle Plugin Directory"
 ```
 
-#### 3.3.2 **Workflow de Release
+### 3.3.2 Workflow de Release
 
 **1. Update `version.php`**
 
@@ -971,3 +976,198 @@ git push origin 1.0.22
 # - Creates GitHub Release
 # - Uploads to Moodle Plugin Directory (if configured)
 ```
+
+# 6. Git Workflow e Branching
+
+## 6.1. Estratégia de Branching (Trunk-Based Development)
+
+**Modelo Recomendado**: Trunk-Based Development com feature branches curtas.
+
+### Estrutura de Branches:
+
+```
+main (stable, sempre deployable)
+├── feature/new-feature (3-5 dias max)
+├── bugfix/issue-42 (1-2 dias max)
+└── docs/update-readme (1 dia max)
+```
+
+**Princípios**:
+- ✅ `main` é sempre estável e deployable
+- ✅ Features são branches de curta vida (máximo 5 dias)
+- ✅ Merges apenas via Pull Requests com CI passando
+- ✅ Branch protection rules aplicadas
+- ✅ Squash commits antes de merge (história clara)
+
+### Naming Convention:
+
+```bash
+# Features
+feature/add-alignment-button
+feature/improve-performance
+
+# Bug fixes
+bugfix/fix-xss-vulnerability
+bugfix/issue-42-user-not-found
+
+# Docs
+docs/update-readme
+docs/add-contributing-guide
+
+# Chores
+chore/update-dependencies
+chore/configure-ci
+```
+
+## 6.2. GitHub Branch Protection Rules
+
+**Configurar em Settings > Branches > Branch protection rules**:
+
+1. ✅ **Require pull request reviews before merging**
+   - Minimum 1 reviewer
+   
+2. ✅ **Require status checks to pass before merging**
+   - Branches atualizado com `origin/main`
+   - Select `moodle-plugin-ci` workflow
+   
+3. ✅ **Require code reviews from code owners**
+   - Enable CODEOWNERS file
+   
+4. ✅ **Require conversation resolution before merging**
+
+### Exemplo CODEOWNERS:
+
+```
+# .github/CODEOWNERS
+* @kelsoncm
+/lang/ @kelsoncm
+/tests/ @kelsoncm
+SECURITY.md @kelsoncm
+```
+
+# 7. .gitignore Padrão para Plugins Moodle
+
+Criar arquivo `.gitignore` na raiz do plugin:
+
+```bash
+# Dependency management
+/vendor/
+/node_modules/
+/composer.lock
+package-lock.json
+yarn.lock
+
+# Build artifacts
+/dist/
+/build/
+*.zip
+*.tar.gz
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+.env
+.env.local
+
+# Testing
+/coverage/
+.phpunit.result.cache
+/tests/behat/output/
+
+# Moodle specific
+/moodle/
+/data/
+db.sqlite
+```
+
+# 8. Code Review Best Practices
+
+## 8.1. Para Autores de PR
+
+**Antes de submeter**:
+1. ✅ Testes passando localmente (`vendor/bin/phpunit`)
+2. ✅ Linter sem erros (`phpcs`)
+3. ✅ CHANGELOG.md atualizado
+4. ✅ Documentação de código completa
+5. ✅ Commits descritivos (Conventional Commits)
+6. ✅ Sem código morto
+
+**Na descrição do PR**:
+- Descrição clara das mudanças
+- Link para issues relacionadas
+- Type of change (bug fix, feature, etc)
+- Checklist de validação
+
+## 8.2. Para Reviewers
+
+**Focar em**:
+- ✅ Segurança (SQL injection, XSS, capabilities)
+- ✅ Performance (N+1 queries)
+- ✅ Manutenibilidade (código claro)
+- ✅ Testes (coverage adequado)
+- ✅ Compatibilidade (versões suportadas)
+
+# 9. Pre-Release Checklist
+
+## 9.1. Antes de fazer uma release**:
+
+- [ ] Branch `main` clean e atualizado
+- [ ] Todos os PRs mergeados
+- [ ] CHANGELOG.md completo
+- [ ] `version.php` atualizado (version e release)
+- [ ] README.md atualizado
+- [ ] Testes passando
+- [ ] Linters passando
+- [ ] GitHub Actions CI/CD passando
+- [ ] Secrets configurados (`MOODLE_DIRECTORY_TOKEN`)
+
+## 9.2. Release Script Rápido
+
+```bash
+#!/bin/bash
+VERSION=$1
+
+# Validate
+if ! [[ $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+  echo "Use X.Y.Z format"
+  exit 1
+fi
+
+PATCH=$(echo $VERSION | cut -d. -f3)
+PLUGIN_VERSION="$(date +%Y%m%d)${PATCH}"
+
+sed -i "s/\\\$plugin->version = [0-9]*/\\\$plugin->version = $PLUGIN_VERSION/" version.php
+sed -i "s/\\\$plugin->release = '[^']*'/\\\$plugin->release = '$VERSION'/" version.php
+
+git add version.php CHANGELOG.md
+git commit -m "chore: bump version to $VERSION"
+git push origin main
+
+git tag -a $VERSION -m "Release $VERSION"
+git push origin $VERSION
+
+echo "✅ Release $VERSION published!"
+```
+
+# 10. Referências
+
+- [Moodle Plugin Development](https://moodledev.io/)
+- [Moodle Coding Style](https://moodledev.io/general/development/policies/codingstyle)
+- [Moodle Accessibility Guide](https://moodledev.io/general/development/policies/accessibility)
+- [GitHub Actions](https://docs.github.com/en/actions)
+- [Keep a Changelog](https://keepachangelog.com/)
+- [Semantic Versioning](https://semver.org/)
+- [Conventional Commits](https://www.conventionalcommits.org/)
+
+--- 
+
+**Última atualização**: 2026-03-04  
+**Autor**: KelsonCM  
+**Licença**: CC-BY-4.0
