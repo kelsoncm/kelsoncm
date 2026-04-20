@@ -61,23 +61,32 @@ Passionate about building robust and scalable solutions for education and health
 - **Specialization in Health Informatics** - Federal University of Rio Grande do Norte (2015-2017)
 - **Techniques of Analysis and Systems Development** - University do Tocantins (2008-2010)
 
+
 ## 📊 GitHub Stats
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=kelsoncm&show_icons=true&theme=dark&count_private=true)
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kelsoncm&layout=compact&theme=dark&hide=html,css,scss)
 
-## Moodle plugin stats
 
-## Moodle plugin stats
+## 📊 Moodle plugin stats
 
 <!-- moodle-plugin-stats:start -->
+<<<<<<< HEAD
+| Plugin | Oldest supported release | Latest release | Supported Moodle versions | Sites | Downloads | Fans |
+|---|---:|---:|---|---:|---:|---:|
+| tiny_justify | updating... | updating... | updating... | - | - | - |
+| mod_imagemap | updating... | updating... | updating... | - | - | - |
+| atto_justify | updating... | updating... | updating... | - | - | - |
+=======
 | Plugin | Latest release | Sites | Downloads | Fans |
 |---|---:|---:|---:|---:|
 | tiny_justify | 1 month | 27 | 39 | 2 |
 | mod_imagemap | 1 month | 7 | 1 | 0 |
 | tool_sentry | 5 months | 97 | 45 | 5 |
+>>>>>>> c58c445ce29a36ac5ae79f666a1606d68c031753
 <!-- moodle-plugin-stats:end -->
+
 
 ## 🤝 Let's Connect
 

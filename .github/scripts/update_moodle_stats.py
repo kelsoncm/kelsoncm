@@ -58,12 +58,26 @@ for frankenstyle in PLUGINS:
         continue
 
     versions = plugin.get("currentversions", [])
-    latest_ts = max(v["timecreated"] for v in versions if "timecreated" in v) if versions else None
-    latest_release = human_age_from_timestamp(latest_ts) if latest_ts else "n/a"
+    if versions:
+        latest_version = max(versions, key=lambda v: v.get("timecreated", 0))
+        oldest_supported_version = min(versions, key=lambda v: v.get("timecreated", 0))
+
+        latest_ts = latest_version.get("timecreated")
+        oldest_ts = oldest_supported_version.get("timecreated")
+
+        latest_release = human_age_from_timestamp(latest_ts) if latest_ts else "n/a"
+        oldest_supported_release = human_age_from_timestamp(oldest_ts) if oldest_ts else "n/a"
+        supported_moodle = latest_version.get("supportedmoodle", "n/a")
+    else:
+        latest_release = "n/a"
+        oldest_supported_release = "n/a"
+        supported_moodle = "n/a"
 
     rows.append({
         "plugin": frankenstyle,
+        "oldest_supported_release": oldest_supported_release,
         "latest_release": latest_release,
+        "supported_moodle": supported_moodle,
         "sites": plugin.get("aggsites", 0),
         "downloads": plugin.get("aggdownloads", 0),
         "fans": plugin.get("aggfavs", 0),
@@ -73,13 +87,13 @@ if missing:
     raise SystemExit(f"Plugins not found in maintained list: {', '.join(missing)}")
 
 table_lines = [
-    "| Plugin | Latest release | Sites | Downloads | Fans |",
-    "|---|---:|---:|---:|---:|",
+    "| Plugin | Oldest supported release | Latest release | Supported Moodle versions | Sites | Downloads | Fans |",
+    "|---|---:|---:|---|---:|---:|---:|",
 ]
 
 for row in rows:
     table_lines.append(
-        f"| {row['plugin']} | {row['latest_release']} | {row['sites']} | {row['downloads']} | {row['fans']} |"
+        f"| {row['plugin']} | {row['oldest_supported_release']} | {row['latest_release']} | {row['supported_moodle']} | {row['sites']} | {row['downloads']} | {row['fans']} |"
     )
 
 block = "<!-- moodle-plugin-stats:start -->\n" + "\n".join(table_lines) + "\n<!-- moodle-plugin-stats:end -->"
