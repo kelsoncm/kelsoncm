@@ -76,10 +76,8 @@ Passionate about building robust and scalable solutions for education and health
 | ------------ |---------------:|------:|----------:|-----:|
 | tiny_justify | updating...    | -     | -         | -    |
 | mod_imagemap | updating...    | -     | -         | -    |
-| atto_justify | updating...    | -     | -         | -    |
 | tool_sentry  | updating...    | -     | -         | -    |
 <!-- moodle-plugin-stats:end -->
-
 
 ## 🤝 Let's Connect
 
