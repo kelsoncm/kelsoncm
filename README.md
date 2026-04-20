@@ -72,19 +72,11 @@ Passionate about building robust and scalable solutions for education and health
 ## 📊 Moodle plugin stats
 
 <!-- moodle-plugin-stats:start -->
-<<<<<<< HEAD
 | Plugin | Oldest supported release | Latest release | Supported Moodle versions | Sites | Downloads | Fans |
 |---|---:|---:|---|---:|---:|---:|
 | tiny_justify | updating... | updating... | updating... | - | - | - |
 | mod_imagemap | updating... | updating... | updating... | - | - | - |
-| atto_justify | updating... | updating... | updating... | - | - | - |
-=======
-| Plugin | Latest release | Sites | Downloads | Fans |
-|---|---:|---:|---:|---:|
-| tiny_justify | 1 month | 27 | 39 | 2 |
-| mod_imagemap | 1 month | 7 | 1 | 0 |
-| tool_sentry | 5 months | 97 | 45 | 5 |
->>>>>>> c58c445ce29a36ac5ae79f666a1606d68c031753
+| tool_sentry | updating... | updating... | updating... | - | - | - |
 <!-- moodle-plugin-stats:end -->
 
 
