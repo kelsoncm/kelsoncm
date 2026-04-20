@@ -61,25 +61,21 @@ Passionate about building robust and scalable solutions for education and health
 - **Specialization in Health Informatics** - Federal University of Rio Grande do Norte (2015-2017)
 - **Techniques of Analysis and Systems Development** - University do Tocantins (2008-2010)
 
-## 🌟 Featured Projects
-
-### [ng-editor-tiptap](https://github.com/kelsoncm/ng-editor-tiptap)
-TipTap editor for Angular 17+ written in TypeScript. A rich text editor component for modern Angular applications.
-
-### [python-fwf](https://github.com/kelsoncm/python-fwf)
-Simple Python library to read tabbed files as validated arrays. Useful for processing fixed-width format files.
-
-### [django-adminlte3](https://github.com/kelsoncm/django-adminlte3)
-Integration of AdminLTE3 with Django, providing a modern and responsive admin interface.
-
-### [django-moodle](https://github.com/kelsoncm/django-moodle)
-Django ORM for Moodle database, enabling seamless integration between Django applications and Moodle platforms.
-
 ## 📊 GitHub Stats
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=kelsoncm&show_icons=true&theme=dark&count_private=true)
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kelsoncm&layout=compact&theme=dark&hide=html,css,scss)
+
+## Moodle plugin stats
+
+<!-- moodle-plugin-stats:start -->
+- Latest release: updating...
+- Sites: updating...
+- Downloads: updating...
+- Fans: updating...
+<!-- moodle-plugin-stats:end -->
+
 
 ## 🤝 Let's Connect
 
