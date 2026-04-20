@@ -72,11 +72,11 @@ Passionate about building robust and scalable solutions for education and health
 ## Moodle plugin stats
 
 <!-- moodle-plugin-stats:start -->
-| Plugin       | Latest release | Sites | Downloads | Fans |
-| ------------ |---------------:|------:|----------:|-----:|
-| tiny_justify | updating...    | -     | -         | -    |
-| mod_imagemap | updating...    | -     | -         | -    |
-| tool_sentry  | updating...    | -     | -         | -    |
+| Plugin | Latest release | Sites | Downloads | Fans |
+|---|---:|---:|---:|---:|
+| tiny_justify | 1 month | 27 | 39 | 2 |
+| mod_imagemap | 1 month | 7 | 1 | 0 |
+| tool_sentry | 5 months | 97 | 45 | 5 |
 <!-- moodle-plugin-stats:end -->
 
 ## 🤝 Let's Connect
