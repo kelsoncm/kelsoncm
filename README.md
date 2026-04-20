@@ -69,11 +69,15 @@ Passionate about building robust and scalable solutions for education and health
 
 ## Moodle plugin stats
 
+## Moodle plugin stats
+
 <!-- moodle-plugin-stats:start -->
-- Latest release: updating...
-- Sites: updating...
-- Downloads: updating...
-- Fans: updating...
+| Plugin       | Latest release | Sites | Downloads | Fans |
+| ------------ |---------------:|------:|----------:|-----:|
+| tiny_justify | updating...    | -     | -         | -    |
+| mod_imagemap | updating...    | -     | -         | -    |
+| atto_justify | updating...    | -     | -         | -    |
+| tool_sentry  | updating...    | -     | -         | -    |
 <!-- moodle-plugin-stats:end -->
 
 
