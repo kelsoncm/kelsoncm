@@ -27,7 +27,7 @@ jobs:
       - name: Update README stats table
         env:
           MOODLE_TOKEN: ${{ secrets.MOODLE_TOKEN }}
-          MOODLE_PLUGINS: tiny_justify,mod_imagemap,atto_justify
+          MOODLE_PLUGINS: tiny_justify,mod_imagemap,tool_sentry
           README_PATH: README.md
         run: python .github/scripts/update_moodle_stats.py
 
