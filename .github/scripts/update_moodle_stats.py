@@ -7,17 +7,27 @@ TOKEN = os.environ["MOODLE_TOKEN"]
 README_PATH = os.environ.get("README_PATH", "README.md")
 PLUGINS = [p.strip() for p in os.environ["MOODLE_PLUGINS"].split(",") if p.strip()]
 
-resp = requests.get(
+resp = requests.post(
     "https://moodle.org/webservice/rest/server.php",
-    params={
+    data={
         "wstoken": TOKEN,
         "wsfunction": "local_plugins_get_maintained_plugins",
         "moodlewsrestformat": "json",
     },
+    headers={
+        "User-Agent": "kelsoncm-readme-moodle-stats/1.0",
+        "Accept": "application/json",
+    },
     timeout=30,
 )
-resp.raise_for_status()
+
+if resp.status_code != 200:
+    raise SystemExit(f"HTTP {resp.status_code}: {resp.text[:1000]}")
+
 data = resp.json()
+
+if isinstance(data, dict) and data.get("exception"):
+    raise SystemExit(f"{data.get('errorcode')}: {data.get('message')}")
 
 if not isinstance(data, list):
     raise SystemExit(f"Unexpected API response: {data}")
