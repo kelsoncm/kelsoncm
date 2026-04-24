@@ -53,7 +53,7 @@ Passionate about building robust and scalable solutions for education and health
 | ------- | ------- | -------- | ------- |
 | [painel_ava](https://github.com/cte-zl-ifrn/integration-painel_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
 | [integrador_ava](https://github.com/cte-zl-ifrn/integration-integrador_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
-| [mod_attendance_suap](https://github.com/cte-zl-ifrn/moodle-mod_attendance_suap) | Moodle | Suap e Integrador AVA | ![License: MIT](https://img.shields.io/badge/License-GPL-yellow.svg) |
+| [mod_attendance_suap](https://github.com/cte-zl-ifrn/moodle-mod_attendance_suap) | Moodle | Suap e Integrador AVA | ![License: MIT](https://img.shields.io/badge/License-GPL3-yellow.svg) |
 | [tool_painelava](https://github.com/cte-zl-ifrn/moodle-tool_painelava) | Moodle | Painel AVA | ![License: MIT](https://img.shields.io/badge/License-GPL3-yellow.svg) |
 | [tool_sga](https://github.com/cte-zl-ifrn/moodle-tool_sga) | Moodle | Integrador AVA | ![License: MIT](https://img.shields.io/badge/License-GPL3-yellow.svg) |
 | [auth_suap](https://github.com/cte-zl-ifrn/moodle-auth_suap) | Moodle | Suap | ![License: MIT](https://img.shields.io/badge/License-GPL3-yellow.svg) |
