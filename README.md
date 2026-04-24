@@ -51,7 +51,6 @@ Passionate about building robust and scalable solutions for education and health
 
 | Project | Stack   | Supports | Coverage | License |
 | ------- | ------- | -------- | -------- | ------- |
-| [gestao_ava](https://github.com/cte-zl-ifrn/integration-gestao_ava) | Django | - | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
 | [painel_ava](https://github.com/cte-zl-ifrn/integration-painel_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
 | [painel_ava](https://github.com/cte-zl-ifrn/integration-painel_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
 | [integrador_ava](https://github.com/cte-zl-ifrn/integration-integrador_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
