@@ -49,8 +49,8 @@ Passionate about building robust and scalable solutions for education and health
 
 ## Moodle/SGA integration
 
-| Project | Stack   | Supports | Coverage | License |
-| ------- | ------- | -------- | -------- | ------- |
+| Project | Stack   | Supports | License |
+| ------- | ------- | -------- | ------- |
 | [painel_ava](https://github.com/cte-zl-ifrn/integration-painel_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
 | [painel_ava](https://github.com/cte-zl-ifrn/integration-painel_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
 | [integrador_ava](https://github.com/cte-zl-ifrn/integration-integrador_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
