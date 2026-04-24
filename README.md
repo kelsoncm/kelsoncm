@@ -43,8 +43,25 @@ Passionate about building robust and scalable solutions for education and health
 | [sabia-auth](https://github.com/kelsoncm/django-sabia-auth) | ![Version](https://img.shields.io/pypi/v/django-sabia-auth?v=1.1.0) | ![Python](https://img.shields.io/pypi/pyversions/django-sabia-auth.svg?v=1.1.0)  |![Coverage](https://codecov.io/gh/kelsoncm/django-sabia-auth/branch/main/graph/badge.svg) | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
 | [suap-auth](https://github.com/kelsoncm/django-suap-auth) | [![Python](https://img.shields.io/pypi/v/django-suap-auth)](https://pypi.org/project/django-suap-auth/) | ![Python](https://img.shields.io/pypi/pyversions/django-suap-auth.svg) |![Coverage](https://codecov.io/gh/kelsoncm/django-suap-auth/branch/main/graph/badge.svg) | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
 | [admintheme-dsgovbr](https://github.com/kelsoncm/django-admintheme-dsgovbr) | ![Version](https://img.shields.io/pypi/v/django-admintheme-dsgovbr) | ![Python](https://img.shields.io/pypi/pyversions/django-admintheme-dsgovbr.svg) |![Coverage](https://codecov.io/gh/kelsoncm/django-admintheme-dsgovbr/branch/main/graph/badge.svg) | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
-| [admintheme-adminlte3](https://github.com/kelsoncm/django-admintheme-adminlte3) | ![Version](https://img.shields.io/pypi/v/django-admintheme-adminlte3) | ![Python](https://img.shields.io/pypi/pyversions/django-admintheme-adminlte3.svg) |![Coverage](https://codecov.io/gh/kelsoncm/django-admintheme-adminlte3/branch/main/graph/badge.svg) | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
+| [admintheme-adminlte3](https://github.com/kelsoncm/django-admintheme-adminlte3) | ![Version](https://img.shields.io/pypi/v/django-admintheme-adminlte3) | ![Python](https://img.shields.io/pypi/pyversions/django-admintheme-adminlte3.svg) | ![Coverage](https://codecov.io/gh/kelsoncm/django-admintheme-adminlte3/branch/main/graph/badge.svg) | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) | 
 | [abrasileirado](https://github.com/abrasileirado/django_abrasileirado) | ![Version](https://img.shields.io/pypi/v/django_abrasileirado) | ![Python](https://img.shields.io/pypi/pyversions/django-abrasileirado.svg) |![Coverage](https://codecov.io/gh/kelsoncm/django-abrasileirado/branch/main/graph/badge.svg) | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
+
+
+## Moodle/SGA integration
+
+| Project | Stack   | Supports | Coverage | License |
+| ------- | ------- | -------- | -------- | ------- |
+| [gestao_ava](https://github.com/cte-zl-ifrn/integration-gestao_ava) | Django | - | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
+| [painel_ava](https://github.com/cte-zl-ifrn/integration-painel_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
+| [painel_ava](https://github.com/cte-zl-ifrn/integration-painel_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
+| [integrador_ava](https://github.com/cte-zl-ifrn/integration-integrador_ava) | Django | Suap e SGA | ![License: MIT](https://img.shields.io/badge/License-MIT-lemon.svg) |
+| [mod_attendance_suap](https://github.com/cte-zl-ifrn/moodle-mod_attendance_suap) | Moodle | Suap e Integrador AVA | ![License: MIT](https://img.shields.io/badge/License-GPL-yellow.svg) |
+| [tool_painelava](https://github.com/cte-zl-ifrn/moodle-tool_painelava) | Moodle | Painel AVA | ![License: MIT](https://img.shields.io/badge/License-GPL3-yellow.svg) |
+| [tool_sga](https://github.com/cte-zl-ifrn/moodle-tool_sga) | Moodle | Integrador AVA | ![License: MIT](https://img.shields.io/badge/License-GPL3-yellow.svg) |
+| [auth_suap](https://github.com/cte-zl-ifrn/moodle-auth_suap) | Moodle | Suap | ![License: MIT](https://img.shields.io/badge/License-GPL3-yellow.svg) |
+| [local_suap](https://github.com/cte-zl-ifrn/moodle-local_suap) | Moodle | Suap | ![License: MIT](https://img.shields.io/badge/License-GPL3-yellow.svg) |
+
+
 
 ## 💼 Professional Experience
 - Since 2015 │ Health Software Researcher at LAIS/UFRN
