@@ -1,4 +1,4 @@
-# Kelson da Costa Medeiros 🇧🇷 🇬🇧
+# Kelson da Costa Medeiros
 
 **Specialist in Health Informatics | Educational Technology Coordinator | Full-Stack Developer**
 
