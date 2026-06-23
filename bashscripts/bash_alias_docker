@@ -1,0 +1,11 @@
+#!/bin/bash
+alias dk='docker'
+alias dkv='docker volume'
+alias dki='docker image'
+alias dkc='docker container'
+alias dkps='docker ps'
+
+alias ddc='docker-compose'
+alias ddcr='docker-compose run'
+alias ddce='docker-compose exec'
+

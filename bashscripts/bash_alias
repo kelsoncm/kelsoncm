@@ -1,0 +1,47 @@
+#!/bin/bash
+alias cls='clear'
+alias susu='sudo su -'
+alias ls='ls -G -h --time-style="+%Y/%m/%d %H:%M:%S"'
+alias ll='ls -l'
+alias la='ls -la'
+alias l='ls -a'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
+alias cd.....='cd ../../../..'
+alias cd......='cd ../../../../..'
+alias md='mkdir -p'
+#alias rm='rm -rf'
+alias po=popd
+alias pu=pushd
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias psgrep='ps -aAf | grep '
+
+alias apt-i='apt-get install'
+alias apt-u='apt-get update'
+alias apt-uu='apt-get upgrade'
+alias apt-uuu='apt-get update && apt-get upgrade'
+alias apt-s='apt-cache search'
+alias apt-ss='apt-cache show'
+alias apt-r='apt-get remove'
+alias apt-ar='apt-get autoremove'
+
+alias untar='tar -xzvf'
+
+alias drs='./manage.py runserver'
+alias dsp='./manage.py shell_plus'
+alias dsu='./manage.py show_urls'
+alias dmm='./manage.py makemigrations'
+alias dmn='./manage.py migrate'
