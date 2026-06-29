@@ -96,7 +96,7 @@ Passionate about building robust and scalable solutions for education and health
 |---|---:|---:|---|---:|---:|---:|
 | tiny_justify | 3 months | 3 months | 4.5,5.0,5.1,5.2 | 175 | 85 | 3 |
 | mod_imagemap | 3 months | 3 months | 4.5,5.0,5.1 | 10 | 0 | 0 |
-| tool_sentry | 2 years | 15 days | 4.1,4.2,4.3,4.4,4.5,5.0,5.1,5.2 | 109 | 97 | 5 |
+| tool_sentry | 3 years | 22 days | 4.1,4.2,4.3,4.4,4.5,5.0,5.1,5.2 | 109 | 105 | 5 |
 <!-- moodle-plugin-stats:end -->
 
 
