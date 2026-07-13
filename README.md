@@ -94,9 +94,9 @@ Passionate about building robust and scalable solutions for education and health
 <!-- moodle-plugin-stats:start -->
 | Plugin | Oldest supported release | Latest release | Supported Moodle versions | Sites | Downloads | Fans |
 |---|---:|---:|---|---:|---:|---:|
-| tiny_justify | 4 months | 4 months | 4.5,5.0,5.1,5.2 | 202 | 83 | 3 |
-| mod_imagemap | 3 months | 3 months | 4.5,5.0,5.1 | 8 | 0 | 0 |
-| tool_sentry | 3 years | 29 days | 4.1,4.2,4.3,4.4,4.5,5.0,5.1,5.2 | 108 | 124 | 5 |
+| tiny_justify | 4 months | 4 months | 4.5,5.0,5.1,5.2 | 202 | 86 | 3 |
+| mod_imagemap | 4 months | 4 months | 4.5,5.0,5.1 | 8 | 0 | 0 |
+| tool_sentry | 3 years | 1 month | 4.1,4.2,4.3,4.4,4.5,5.0,5.1,5.2 | 108 | 137 | 5 |
 <!-- moodle-plugin-stats:end -->
 
 
