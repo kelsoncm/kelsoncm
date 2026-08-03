@@ -27,7 +27,15 @@ if resp.status_code != 200:
 data = resp.json()
 
 if isinstance(data, dict) and data.get("exception"):
-    raise SystemExit(f"{data.get('errorcode')}: {data.get('message')}")
+    err_code = data.get("errorcode")
+    err_msg = data.get("message")
+    if err_code == "accessexception":
+        raise SystemExit(
+            f"{err_code}: {err_msg}\n"
+            "O MOODLE_TOKEN é inválido, expirou ou não tem permissão para 'local_plugins_get_maintained_plugins'.\n"
+            "Gere um novo token em https://moodle.org/plugins (API access) e atualize a secret MOODLE_TOKEN nos segredos do repositório no GitHub."
+        )
+    raise SystemExit(f"{err_code}: {err_msg}")
 
 if not isinstance(data, list):
     raise SystemExit(f"Unexpected API response: {data}")
