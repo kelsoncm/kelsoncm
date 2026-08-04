@@ -84,9 +84,9 @@ Passionate about building robust and scalable solutions for education and health
 
 ## 📊 GitHub Stats
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=kelsoncm&show_icons=true&theme=dark&count_private=true)
+![GitHub Stats](./docs/github-stats.svg)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kelsoncm&layout=compact&theme=dark&hide=html,css,scss)
+![Top Languages](./docs/top-langs.svg)
 
 
 ## 📊 Moodle plugin stats
