@@ -1,0 +1,55 @@
+name: Metrics
+
+on:
+  # Atualiza diariamente (ajuste o horário se quiser)
+  schedule:
+    - cron: "0 0 * * *"
+  # Permite rodar manualmente em "Actions"
+  workflow_dispatch:
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Generate metrics
+        uses: lowlighter/metrics@latest
+        with:
+          # Token com escopos de leitura (tipo classic com read:user, read:org, repo se quiser privados)
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # Nome do arquivo gerado no repo
+          filename: github-metrics.svg
+
+          # Usuário alvo (se não passar, ele tenta inferir do token)
+          user: kelsoncm
+
+          # Template e seções base (header + atividade + repositórios)
+          template: classic
+          base: header, activity, community, repositories
+
+          # Timezone para cálculos de atividade / calendário
+          config_timezone: America/Recife
+
+          # Plugin de linguagens
+          plugin_languages: yes
+          plugin_languages_limit: 8
+          plugin_languages_colors: github
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 2%
+
+          # Plugin de atividade (commits, issues, PRs, etc.)
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+          plugin_activity_filter: all
+
+          # Plugin de linhas de código alteradas
+          plugin_lines: yes
+          plugin_lines_repositories_limit: 4
+
+          # Plugin de "followup" (estatísticas consolidadas)
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user
