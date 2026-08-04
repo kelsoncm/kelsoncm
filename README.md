@@ -84,10 +84,6 @@ Passionate about building robust and scalable solutions for education and health
 
 ## 📊 GitHub Stats
 
-![GitHub Stats](./docs/github-stats.svg)
-
-![Top Languages](./docs/top-langs.svg)
-
 ![Metrics](https://github.com/kelsoncm/kelsoncm/blob/main/github-metrics.svg)
 
 ## 📊 Moodle plugin stats
