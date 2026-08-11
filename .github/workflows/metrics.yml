@@ -47,7 +47,7 @@ jobs:
           plugin_activity_filter: all
 
           # Plugin de linhas de código alteradas
-          plugin_lines: yes
+          plugin_lines: no
           plugin_lines_repositories_limit: 4
 
           # Plugin de "followup" (estatísticas consolidadas)
