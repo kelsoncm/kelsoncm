@@ -1,4 +1,5 @@
 # Kelson da Costa Medeiros
+[![committers.top badge](https://user-badge.committers.top/REGION/USERNAME.svg)](https://user-badge.committers.top/REGION/USERNAME)
 
 **Specialist in Health Informatics | Educational Technology Coordinator | Full-Stack Developer**
 
