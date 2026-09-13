@@ -55,3 +55,8 @@ pyenv virtualenv 3.13 projectname
 pyenv activate project
 python --version
 ```
+
+## Windows & Oh My Posh
+
+Para provisionamento de ambiente Windows e utilização do tema customizado do Oh My Posh (`agnoster` com `executiontime`), consulte a documentação detalhada em [bashscripts/windows/README.md](windows/README.md).
+
