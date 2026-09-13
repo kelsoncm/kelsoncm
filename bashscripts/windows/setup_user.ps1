@@ -81,9 +81,14 @@ $themeDir = "$env:LOCALAPPDATA\Programs\oh-my-posh\themes"
 # Cria o diretório se não existir
 if (!(Test-Path $themeDir)) { New-Item -Path $themeDir -ItemType Directory }
 
-# Baixa o tema agnoster diretamente do repo oficial
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/agnoster.omp.json" `
-                  -OutFile "$themeDir\agnoster.omp.json"
+# Copia ou baixa o tema agnoster customizado (com executiontime)
+$localTheme = Join-Path $PSScriptRoot "themes\agnoster.omp.json"
+if (Test-Path $localTheme) {
+    Copy-Item -Path $localTheme -Destination "$themeDir\agnoster.omp.json" -Force
+} else {
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/kelsoncm/kelsoncm/refs/heads/main/bashscripts/windows/themes/agnoster.omp.json" `
+                      -OutFile "$themeDir\agnoster.omp.json"
+}
 
 # Instal o scoop
 iwr -useb get.scoop.sh | iex
