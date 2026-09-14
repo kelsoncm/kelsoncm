@@ -1,0 +1,125 @@
+﻿organizacao,projeto,descricao_organizacao,descricao_repositorio
+cte-zl-ifrn,docker-moodle,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,Moodle AVA Image
+cte-zl-ifrn,ifrn-editorial-portal,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,Portal editorial para edição assistida e submissão controlada de conteúdo Markdown ao repositório cte-zl-ifrn/central-ajuda.
+cte-zl-ifrn,central-ajuda,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,central-ajuda
+cte-zl-ifrn,cte-zl-ifrn.github.io,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,Ecossistema AVA do IFRN
+cte-zl-ifrn,.github,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,
+cte-zl-ifrn,if__favicon,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,Favorites Icon (Favicon) de Instituto Federal.
+abrasileirado,python_abrasileirado,Validação e manipulação de dados brasileiros com simplicidade,Python library specific brazilian objects and validations.
+abrasileirado,blast-dbf,Validação e manipulação de dados brasileiros com simplicidade,Code to convert from dbc to dbf - Based on blast by Mark Adler <madler@alumni.caltech.edu>         Decompressor for output of PKWare Data Compression Library (DCL)
+abrasileirado,dbc2dbf,Validação e manipulação de dados brasileiros com simplicidade,Converte arquivos comprimidos com PKWare/DCL(Data Compression Library) para DBF
+abrasileirado,django_abrasileirado,Validação e manipulação de dados brasileiros com simplicidade,Django Application specific brazilian fields types
+abrasileirado,java_abrasileirado,Validação e manipulação de dados brasileiros com simplicidade,java_abrasileirado
+abrasileirado,javascript_abrasileirado,Validação e manipulação de dados brasileiros com simplicidade,javascript_abrasileirado
+abrasileirado,php_abrasileirado,Validação e manipulação de dados brasileiros com simplicidade,PHP BRfied
+abrasileirado,abrasileirado.github.io,Validação e manipulação de dados brasileiros com simplicidade,Contém o código-fonte do portal público de documentação e apresentação da suíte Abrasileirado.
+abrasileirado,.github,Validação e manipulação de dados brasileiros com simplicidade,
+h5p-companion,H5P.TextEditor,Complementos ao H5P,"This is an H5P tool for text content editing based on the TinyMCE library. With this rich text editor, you can create formatted content in a simple and intuitive way, thanks to an easy-to-use interface."
+h5p-companion,H5P.CodeMirror,Complementos ao H5P,Code editor for H5P
+h5p-companion,H5P.CodeHighlighter,Complementos ao H5P,"This H5P content type allow you to display code from various language (html, javascript, python, etc.) with syntax highlighting."
+h5p-companion,CustomizableColumn,Complementos ao H5P,"A library that combines multiple H5P content types into a single vertical layout. Supports nesting, individual configuration of each content item, and drag-and-drop reordering in the editor."
+h5p-companion,CustomCSS,Complementos ao H5P,A simple library that change CSS of the Content. Useful when developer wana dynamially changes CSS of another existing Content Type.
+h5p-companion,CustomizableInteractiveBook,Complementos ao H5P,"Interactive Book is a library that combines multiple H5P content types into a single vertical layout. It supports nested content, individual configuration for each item, and drag-and-drop reordering within the editor."
+h5p-companion,h5p-companion.github.io,Complementos ao H5P,Pages
+h5p-companion,.github,Complementos ao H5P,github
+h5p-companion,H5P.PreDependencias,Complementos ao H5P,
+h5p-companion,H5P.Editor.CodeEditor,Complementos ao H5P,Code editor for H5P
+h5p-companion,H5P.interactive-book,Complementos ao H5P,
+h5p-companion,H5P.Text,Complementos ao H5P,
+h5p-companion,H5P.Column,Complementos ao H5P,A column of other H5P content types
+infra-cte-zl-ifrn,kubespray,,Deploy a Production Ready Kubernetes Cluster
+archive-cte-zl-ifrn,mobileapp-moodle,,The Moodle App
+archive-cte-zl-ifrn,moodle-format_suap,,moodle__format_suap
+archive-cte-zl-ifrn,moodle-enrol_suap,,enrol__suap
+archive-cte-zl-ifrn,moodle-theme_moove,,moodle__theme_moove
+archive-cte-zl-ifrn,sass,,sass
+proitec-moodle-suite,moodle-block_multiprogress,,Este bloco Moodle foi DESCONTINUADO e substituído funcionalmente pelo módulo de atividade mod_multiprogress.
+proitec-moodle-suite,moodle-mod_multiprogress,,"Módulo de atividade para o Moodle desenvolvido para proporcionar aos estudantes uma visualização clara, moderna e consolidada do seu progresso individual nas diversas trilhas de conhecimento do curso ProITEC do IFRN."
+proitec-moodle-suite,moodle-mod_mapaproitec,,Módulo de atividade para o Moodle desenvolvido especialmente para o curso autoinstrucional ProITEC do Instituto Federal do Rio Grande do Norte (IFRN).
+proitec-moodle-suite,moodle-mod_codexproitec,,"Módulo de atividade de gamificação desenvolvido para o Moodle, responsável por gerenciar a coleção de Gemas do Conhecimento e a recompensa final do curso autoinstrucional ProITEC no IFRN."
+proitec-moodle-suite,moodle-mod_medalhasproitec,,Módulo de gamificação para o Moodle que oferece um sistema completo de conquistas e medalhas para engajar os alunos do curso autoinstrucional ProITEC do IFRN.
+proitec-moodle-suite,.github,,.github
+proitec-moodle-suite,proitec-moodle-suite.github.io,,Páginas de documentação da Suite de plugins para Moodle do ProITEC.
+moodle-by-kelsoncm,mod_imagemap,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Moodle module to handle conditional image map based on conclusion of other modules
+moodle-by-kelsoncm,moodleapp,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",The Moodle App
+moodle-by-kelsoncm,moodle-by-kelsoncm.github.io,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Página dos projetos pessoais em Moodle de KelsonCM
+moodle-by-kelsoncm,moodle-docs-theme,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Tema sphinx baseado do Moodle Docs
+moodle-by-kelsoncm,tool_ribbons,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ","Allows you to set ribbons in the 4 corners of your site, displaying either static text, or dynamic text driven from a script."
+moodle-by-kelsoncm,tiny_fileimport,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",
+moodle-by-kelsoncm,tiny_fontsize,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Tiny editor font size plugin.
+moodle-by-kelsoncm,tiny_fontfamily,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",With this plugin you'll be able to choose your paragraph's font family.
+moodle-by-kelsoncm,format_timeline,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",
+moodle-by-kelsoncm,tool_participantscustomfilter,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Plugin Moodle local que adiciona um filtro por campos personalizados do perfil do usuário na página de listagem de participantes (/enrol/index.php)
+moodle-by-kelsoncm,tool_dbmigrate,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ","New Moodle database CLI migration tool. Tested to migrate a database from MySQL to PostgreSQL, but, not restricted to this scenario."
+moodle-by-kelsoncm,tool_bulkclienrolment,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Moodle Bulk CLI Enrolment plugin
+moodle-by-kelsoncm,tool_brcli,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ","BrCLI (Backup & Restore Command-Line Interface) is a command-line plug-in integrated in Moodle that allows administrators to performs bulk backup and restores of all categories, not just a single course."
+moodle-by-kelsoncm,tiny_justify,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Moodle tiny justify plugin
+moodle-by-kelsoncm,profilefield_json,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",JSON custom field to user profiles into Moodle
+moodle-by-kelsoncm,local_tinytoolbar,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Moodle local plugin that allows a admin to configure tiny toolbar
+moodle-by-kelsoncm,editor_tiptap,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",A TipTap editor plugin for Moodle
+moodle-by-kelsoncm,docker-compose,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Moodle Docker image
+moodle-by-kelsoncm,block_recommendation,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Moodle recommendation block plugin
+moodle-by-kelsoncm,atto_justify,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Justify align for Moodle atto editor atto_justify
+moodle-by-kelsoncm,.github,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Profile da organização
+suap-ava-suite,mobileapp-moodle,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,The Moodle App
+suap-ava-suite,moodle-auth_suap,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,"Plugin de autenticacao via OAuth2 do SUAP. Faz o login no Moodle e sincroniza dados do usuario, foto e campos de perfil customizados."
+suap-ava-suite,djangoapp-integrador_ava,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,"O Integrador AVA é um middleware que conecta Sistemas de Gestão Acadêmica (SGA) ao Moodle. Suporta o Suap como padrão principal — pronto de fábrica para o IFRN — e o padrão SGA genérico para instituições que usam SIGAA, qAcadêmico ou outro sistema acadêmico."
+suap-ava-suite,moodle-tool_painelava,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,"Moodle Admin Tool plugin que integra o Moodle ao Painel AVA, fornecendo uma API externa para recuperar os dados de cursos de um usuário organizados por tipo de curso."
+suap-ava-suite,moodle-tool_sga,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,O tool_sga é um plugin do tipo Admin Tool para o Moodle que disponibiliza uma API REST destinada à sincronização de dados provenientes do SGA (Sistema de Gestão Acadêmica). 
+suap-ava-suite,moodle-local_suap,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,"O local_suap é um plugin local do Moodle responsável pelo núcleo da integração entre o AVA (Ambiente Virtual de Aprendizagem) e o SUAP (Sistema Unificado de Administração Pública), realizando a sincronização bidirecional de dados acadêmicos."
+suap-ava-suite,pypkg-avaintegration_metapackage,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,"Meta-pacote Python 3.14 que agrega todas as dependências necessárias para projetos Django 6.0 do ecossistema AVA do IFRN(Integrador AVA, Painel AVA, Gestor AVA e Leitor EaD)."
+suap-ava-suite,djangoapp-painel_ava,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,"O Painel AVA é um dashboard com todos os cursos e inscrições que dos AVA que com os quais ele integra, desta forma cada usuário tem acesso aos cursos/diários em que está inscrito sem precisar procurar em vários Moodles."
+suap-ava-suite,.github,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,Página da organização suap-ava-suite
+suap-ava-suite,suap-ava-suite.github.io,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,"Documentação centralizada da SUAP/AVA Suite, um conjunto de plugins Moodle e middlewares para integração com Sistemas de Gestão Acadêmica (SGA), como o SUAP do IFRN, ao Moodle."
+suap-ava-suite,cdn-suap_ava_suite,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,"O cdn-suap_ava_suite é o repositório de assets estáticos centralizados (CDN) utilizado por toda a suíte SUAP-AVA, funcionando como ponto único de distribuição de recursos compartilhados entre os diferentes componentes do ecossistema."
+suap-ava-suite,moodle-tool_authors,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,Moodle tool for authors registration
+suap-ava-suite,moodle-mod_attendance_suap,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,Moodle Attendance SUAP Module
+suap-moodletheme-suite,moodle-block_site_info,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,Moodle site info block
+suap-moodletheme-suite,moodle-block_course_rating,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,
+suap-moodletheme-suite,moodle-block_course_gallery,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,Moodle block to list a ccourse gallery
+suap-moodletheme-suite,moodle-theme_suap,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,IFRN Moodle Theme SUAP
+suap-moodletheme-suite,suap-moodletheme-suite.github.io,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,Landing page e documentação da SUAP Moodle Theme Suite
+suap-moodletheme-suite,.github,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,Profile da organização
+fixed-width-file,python-pyfwf,Official portal for the Fixed Width File (FWF) ecosystem.,A simple python library to read tabbed file as validated array
+fixed-width-file,javascript-fwf,Official portal for the Fixed Width File (FWF) ecosystem.,Javascript fixed width file (FWF) processing utilities
+fixed-width-file,fwf-compliance-tests,Official portal for the Fixed Width File (FWF) ecosystem.,Compliance tests for libraries implements FWF processing
+fixed-width-file,fixed-width-file.github.io,Official portal for the Fixed Width File (FWF) ecosystem.,Gihtub Pages repository para o fixed-width-file.github.io
+fixed-width-file,java-fwf,Official portal for the Fixed Width File (FWF) ecosystem.,"High-performance, type-safe Java library for parsing, validating, hydrating, and exporting Fixed Width Files (FWF)."
+fixed-width-file,php-fwf,Official portal for the Fixed Width File (FWF) ecosystem.,PHP fixed width file (FWF) processing utilities
+fixed-width-file,.github,Official portal for the Fixed Width File (FWF) ecosystem.,.github
+dashboard-ava-suite,elt-moodle,,Moodle ELT Integration
+dashboard-ava-suite,dashboard-ava-suite.github.io,,Pages
+dashboard-ava-suite,.github,,Profile
+django-by-kelsoncm,django-auth-suap,Django Tools By KelsonCM,"Backend de autenticação OAuth2 do Django para SUAP (Sistema Unificado de Administração Pública), o sistema de gestão acadêmica do IFRN."
+django-by-kelsoncm,django-project-processo-seletivo,Django Tools By KelsonCM,"Sistema web para gestão de processos seletivos, inscrições, avaliações, recursos e resultados. Desenvolvido em Django, Celery e REST Framework, com suporte a autenticação via gov.br e integração com SUAP."
+django-by-kelsoncm,django-celery-task-monitor,Django Tools By KelsonCM,Fornece monitoramento de tarefas Celery no Django Admin com polling via REST.
+django-by-kelsoncm,django-auth-govbr,Django Tools By KelsonCM,Backend de autenticação Django extensível e moderno para integração com o Login Único do Governo Federal (Gov.br) via OpenID Connect (OIDC) com PKCE (Proof Key for Code Exchange).
+django-by-kelsoncm,django-auth-sabia,Django Tools By KelsonCM,"django-sabia-auth provides Django OAuth2 authentication integration with Sabiá, the identity provider for Brazil's SUS (Sistema Único de Saúde)."
+django-by-kelsoncm,django-rule-engine,Django Tools By KelsonCM,"A powerful Django field and widget that brings rule-engine to your Django projects with a beautiful visual editor, real-time validation, and a clean API.  Perfect for building flexible business rules, access control policies, discount conditions, validation rules, and any scenario where you need dynamic, user-configurable logic."
+django-by-kelsoncm,django-admintheme-dsgovbr,Django Tools By KelsonCM,Pacote Django para integração com o Design System do Governo Federal Brasileiro (DS Gov.BR).
+django-by-kelsoncm,django-admintheme-adminlte3,Django Tools By KelsonCM,Tema moderno baseado no AdminLTE 3 adaptado nativamente para a interface de administração do Django Admin.
+django-by-kelsoncm,django_docs_theme,Django Tools By KelsonCM,"Um tema Sphinx reutilizável e altamente customizável criado para desenvolvedores Django. Inspirado no design limpo e profissional da documentação oficial do Django, este tema permite manter uma identidade visual padronizada e moderna em todas as documentações da sua organização."
+django-by-kelsoncm,django-admintheme-sandbox,Django Tools By KelsonCM,Pacote Django para ambiente de sandbox e referência de temas administrativos no Django Admin e formulários Django.
+django-by-kelsoncm,django-wrapper-moodle,Django Tools By KelsonCM,A Django ORM for Moodle
+django-by-kelsoncm,django-by-kelsoncm.github.io,Django Tools By KelsonCM,"Temas profissionais (AdminLTE3, DSGovBR) desenvolvida para transformar a experiência visual e funcional do Django Admin."
+django-by-kelsoncm,.github,Django Tools By KelsonCM,Profile
+digital-library-suite,h5p-mobilereader,,"Aplicativo mobile capaz de importar, armazenar, abrir e reproduzir conteúdos H5P, com foco prioritário em **Interactive Book**, para uso offline."
+digital-library-suite,h5p-exporter,,Wordpress Plugin H5P Export to HTML
+digital-library-suite,digital-library-suite.github.io,,
+digital-library-suite,.github,,Interactive Books Library Suite
+govbr-moodletheme-suite,moodle-theme_govbr,Suíte de plugins para aplicação de tema DS GovBR para Moodle,Moodle theme in conformance Gov.BR's Design System
+govbr-moodletheme-suite,.github,Suíte de plugins para aplicação de tema DS GovBR para Moodle,
+govbr-moodletheme-suite,govbr-moodletheme-suite.github.io,Suíte de plugins para aplicação de tema DS GovBR para Moodle,
+coloquio-ppgep-ifrn,coloquio-ppgep-ifrn.github.io,Arquivo do site do colóquio do PPgEP/IFRN,Pages
+python-by-kelsoncm,.github,Python contributions by KelsonCM,Profile
+python-by-kelsoncm,python-by-kelsoncm.github.io,Python contributions by KelsonCM,Pages
+python-by-kelsoncm,python-sc4py,Python contributions by KelsonCM,"Utilities for date/time, environment parsing, dynamic class loading, percentages, string-to-bool conversion, choice tuples, and in-memory ZIP reading."
+python-by-kelsoncm,python-sc4net,Python contributions by KelsonCM,"Network helpers for HTTP(S) and FTP downloads, with convenience JSON and ZIP readers."
+python-by-kelsoncm,pytest-coverage-gate,Python contributions by KelsonCM,pytest-coverage-gate
+superset-by-kelsoncm,superset-docs-theme,Superset contributions by KelsonCM,"Tema/preset Docusaurus 3 reutilizável para documentação dos projetos da organização, no padrão dos developer-docs do Apache Superset"
+superset-by-kelsoncm,superset-theme-dsgovbr,Superset contributions by KelsonCM,Tema do Superset no padrão do Design System do Governo Federal o Brasil (DSGovBR)
+superset-by-kelsoncm,superset-by-kelsoncm.github.io,Superset contributions by KelsonCM,Pages
+superset-by-kelsoncm,.github,Superset contributions by KelsonCM,Profile
+saude-dados-abertos,cnes-etl,"ETL, modelos de dados e dashboards para dados abertos da saúde (SUS, CNES, SIAB, etc.).",
+saude-dados-abertos,saude-dados-abertos.github.io,"ETL, modelos de dados e dashboards para dados abertos da saúde (SUS, CNES, SIAB, etc.).",
+saude-dados-abertos,.github,"ETL, modelos de dados e dashboards para dados abertos da saúde (SUS, CNES, SIAB, etc.).",
