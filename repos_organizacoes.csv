@@ -3,7 +3,7 @@ cte-zl-ifrn,docker-moodle,Projetos público compartilhados pela ASTE/DEAD/ZL/IFR
 cte-zl-ifrn,ifrn-editorial-portal,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,Portal editorial para edição assistida e submissão controlada de conteúdo Markdown ao repositório cte-zl-ifrn/central-ajuda.
 cte-zl-ifrn,central-ajuda,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,central-ajuda
 cte-zl-ifrn,cte-zl-ifrn.github.io,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,Ecossistema AVA do IFRN
-cte-zl-ifrn,.github,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,
+cte-zl-ifrn,.github,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,Repositório de perfil e configurações da comunidade da organização cte-zl-ifrn.
 cte-zl-ifrn,if__favicon,Projetos público compartilhados pela ASTE/DEAD/ZL/IFRN com a comunidade acadêmica.,Favorites Icon (Favicon) de Instituto Federal.
 abrasileirado,python_abrasileirado,Validação e manipulação de dados brasileiros com simplicidade,Python library specific brazilian objects and validations.
 abrasileirado,blast-dbf,Validação e manipulação de dados brasileiros com simplicidade,Code to convert from dbc to dbf - Based on blast by Mark Adler <madler@alumni.caltech.edu>         Decompressor for output of PKWare Data Compression Library (DCL)
@@ -13,7 +13,7 @@ abrasileirado,java_abrasileirado,Validação e manipulação de dados brasileiro
 abrasileirado,javascript_abrasileirado,Validação e manipulação de dados brasileiros com simplicidade,javascript_abrasileirado
 abrasileirado,php_abrasileirado,Validação e manipulação de dados brasileiros com simplicidade,PHP BRfied
 abrasileirado,abrasileirado.github.io,Validação e manipulação de dados brasileiros com simplicidade,Contém o código-fonte do portal público de documentação e apresentação da suíte Abrasileirado.
-abrasileirado,.github,Validação e manipulação de dados brasileiros com simplicidade,
+abrasileirado,.github,Validação e manipulação de dados brasileiros com simplicidade,Repositório de perfil e configurações da comunidade da organização Abrasileirado.
 h5p-companion,H5P.TextEditor,Complementos ao H5P,"This is an H5P tool for text content editing based on the TinyMCE library. With this rich text editor, you can create formatted content in a simple and intuitive way, thanks to an easy-to-use interface."
 h5p-companion,H5P.CodeMirror,Complementos ao H5P,Code editor for H5P
 h5p-companion,H5P.CodeHighlighter,Complementos ao H5P,"This H5P content type allow you to display code from various language (html, javascript, python, etc.) with syntax highlighting."
@@ -22,33 +22,33 @@ h5p-companion,CustomCSS,Complementos ao H5P,A simple library that change CSS of 
 h5p-companion,CustomizableInteractiveBook,Complementos ao H5P,"Interactive Book is a library that combines multiple H5P content types into a single vertical layout. It supports nested content, individual configuration for each item, and drag-and-drop reordering within the editor."
 h5p-companion,h5p-companion.github.io,Complementos ao H5P,Pages
 h5p-companion,.github,Complementos ao H5P,github
-h5p-companion,H5P.PreDependencias,Complementos ao H5P,
+h5p-companion,H5P.PreDependencias,Complementos ao H5P,Ferramenta e guia para pré-dependências e empacotamento de bibliotecas H5P no Moodle.
 h5p-companion,H5P.Editor.CodeEditor,Complementos ao H5P,Code editor for H5P
-h5p-companion,H5P.interactive-book,Complementos ao H5P,
-h5p-companion,H5P.Text,Complementos ao H5P,
+h5p-companion,H5P.interactive-book,Complementos ao H5P,Componente H5P Interactive Book para estruturação de conteúdo e base de conhecimento interativa.
+h5p-companion,H5P.Text,Complementos ao H5P,Biblioteca H5P para exibição simples e dinâmica de textos formatados.
 h5p-companion,H5P.Column,Complementos ao H5P,A column of other H5P content types
-infra-cte-zl-ifrn,kubespray,,Deploy a Production Ready Kubernetes Cluster
-archive-cte-zl-ifrn,mobileapp-moodle,,The Moodle App
-archive-cte-zl-ifrn,moodle-format_suap,,moodle__format_suap
-archive-cte-zl-ifrn,moodle-enrol_suap,,enrol__suap
-archive-cte-zl-ifrn,moodle-theme_moove,,moodle__theme_moove
-archive-cte-zl-ifrn,sass,,sass
-proitec-moodle-suite,moodle-block_multiprogress,,Este bloco Moodle foi DESCONTINUADO e substituído funcionalmente pelo módulo de atividade mod_multiprogress.
-proitec-moodle-suite,moodle-mod_multiprogress,,"Módulo de atividade para o Moodle desenvolvido para proporcionar aos estudantes uma visualização clara, moderna e consolidada do seu progresso individual nas diversas trilhas de conhecimento do curso ProITEC do IFRN."
-proitec-moodle-suite,moodle-mod_mapaproitec,,Módulo de atividade para o Moodle desenvolvido especialmente para o curso autoinstrucional ProITEC do Instituto Federal do Rio Grande do Norte (IFRN).
-proitec-moodle-suite,moodle-mod_codexproitec,,"Módulo de atividade de gamificação desenvolvido para o Moodle, responsável por gerenciar a coleção de Gemas do Conhecimento e a recompensa final do curso autoinstrucional ProITEC no IFRN."
-proitec-moodle-suite,moodle-mod_medalhasproitec,,Módulo de gamificação para o Moodle que oferece um sistema completo de conquistas e medalhas para engajar os alunos do curso autoinstrucional ProITEC do IFRN.
-proitec-moodle-suite,.github,,.github
-proitec-moodle-suite,proitec-moodle-suite.github.io,,Páginas de documentação da Suite de plugins para Moodle do ProITEC.
+infra-cte-zl-ifrn,kubespray,Repositórios e automações de infraestrutura e DevOps para a ASTE/DEAD/ZL/IFRN.,Deploy a Production Ready Kubernetes Cluster
+archive-cte-zl-ifrn,mobileapp-moodle,Arquivo histórico de projetos e repositórios legados da ASTE/DEAD/ZL/IFRN.,The Moodle App
+archive-cte-zl-ifrn,moodle-format_suap,Arquivo histórico de projetos e repositórios legados da ASTE/DEAD/ZL/IFRN.,moodle__format_suap
+archive-cte-zl-ifrn,moodle-enrol_suap,Arquivo histórico de projetos e repositórios legados da ASTE/DEAD/ZL/IFRN.,enrol__suap
+archive-cte-zl-ifrn,moodle-theme_moove,Arquivo histórico de projetos e repositórios legados da ASTE/DEAD/ZL/IFRN.,moodle__theme_moove
+archive-cte-zl-ifrn,sass,Arquivo histórico de projetos e repositórios legados da ASTE/DEAD/ZL/IFRN.,sass
+proitec-moodle-suite,moodle-block_multiprogress,Suíte de plugins e personalizações Moodle para o programa PROITEC/IFRN.,Este bloco Moodle foi DESCONTINUADO e substituído funcionalmente pelo módulo de atividade mod_multiprogress.
+proitec-moodle-suite,moodle-mod_multiprogress,Suíte de plugins e personalizações Moodle para o programa PROITEC/IFRN.,"Módulo de atividade para o Moodle desenvolvido para proporcionar aos estudantes uma visualização clara, moderna e consolidada do seu progresso individual nas diversas trilhas de conhecimento do curso ProITEC do IFRN."
+proitec-moodle-suite,moodle-mod_mapaproitec,Suíte de plugins e personalizações Moodle para o programa PROITEC/IFRN.,Módulo de atividade para o Moodle desenvolvido especialmente para o curso autoinstrucional ProITEC do Instituto Federal do Rio Grande do Norte (IFRN).
+proitec-moodle-suite,moodle-mod_codexproitec,Suíte de plugins e personalizações Moodle para o programa PROITEC/IFRN.,"Módulo de atividade de gamificação desenvolvido para o Moodle, responsável por gerenciar a coleção de Gemas do Conhecimento e a recompensa final do curso autoinstrucional ProITEC no IFRN."
+proitec-moodle-suite,moodle-mod_medalhasproitec,Suíte de plugins e personalizações Moodle para o programa PROITEC/IFRN.,Módulo de gamificação para o Moodle que oferece um sistema completo de conquistas e medalhas para engajar os alunos do curso autoinstrucional ProITEC do IFRN.
+proitec-moodle-suite,.github,Suíte de plugins e personalizações Moodle para o programa PROITEC/IFRN.,.github
+proitec-moodle-suite,proitec-moodle-suite.github.io,Suíte de plugins e personalizações Moodle para o programa PROITEC/IFRN.,Páginas de documentação da Suite de plugins para Moodle do ProITEC.
 moodle-by-kelsoncm,mod_imagemap,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Moodle module to handle conditional image map based on conclusion of other modules
 moodle-by-kelsoncm,moodleapp,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",The Moodle App
 moodle-by-kelsoncm,moodle-by-kelsoncm.github.io,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Página dos projetos pessoais em Moodle de KelsonCM
 moodle-by-kelsoncm,moodle-docs-theme,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Tema sphinx baseado do Moodle Docs
 moodle-by-kelsoncm,tool_ribbons,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ","Allows you to set ribbons in the 4 corners of your site, displaying either static text, or dynamic text driven from a script."
-moodle-by-kelsoncm,tiny_fileimport,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",
+moodle-by-kelsoncm,tiny_fileimport,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Plugin para o editor TinyMCE do Moodle que permite a importação de arquivos via drag & drop e API.
 moodle-by-kelsoncm,tiny_fontsize,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Tiny editor font size plugin.
 moodle-by-kelsoncm,tiny_fontfamily,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",With this plugin you'll be able to choose your paragraph's font family.
-moodle-by-kelsoncm,format_timeline,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",
+moodle-by-kelsoncm,format_timeline,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Formato de curso em formato de linha do tempo social para o Moodle.
 moodle-by-kelsoncm,tool_participantscustomfilter,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Plugin Moodle local que adiciona um filtro por campos personalizados do perfil do usuário na página de listagem de participantes (/enrol/index.php)
 moodle-by-kelsoncm,tool_dbmigrate,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ","New Moodle database CLI migration tool. Tested to migrate a database from MySQL to PostgreSQL, but, not restricted to this scenario."
 moodle-by-kelsoncm,tool_bulkclienrolment,"Uma biblioteca de repositórios open source projetada para expandir o ecossistema Moodle: editores de texto WYSIWYG, módulos de atividades interativas, ",Moodle Bulk CLI Enrolment plugin
@@ -75,7 +75,7 @@ suap-ava-suite,cdn-suap_ava_suite,A ponte entre o seu Sistema de Gestão Acadêm
 suap-ava-suite,moodle-tool_authors,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,Moodle tool for authors registration
 suap-ava-suite,moodle-mod_attendance_suap,A ponte entre o seu Sistema de Gestão Acadêmica e o Moodle — pronta para produção.,Moodle Attendance SUAP Module
 suap-moodletheme-suite,moodle-block_site_info,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,Moodle site info block
-suap-moodletheme-suite,moodle-block_course_rating,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,
+suap-moodletheme-suite,moodle-block_course_rating,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,Plugin de bloco Moodle para avaliação e classificação de cursos por estudantes.
 suap-moodletheme-suite,moodle-block_course_gallery,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,Moodle block to list a ccourse gallery
 suap-moodletheme-suite,moodle-theme_suap,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,IFRN Moodle Theme SUAP
 suap-moodletheme-suite,suap-moodletheme-suite.github.io,Reúne tema e plugins Moodle desenvolvidos para integrar a experiência visual e funcional do Moodle com o ecossistema do SUAP ,Landing page e documentação da SUAP Moodle Theme Suite
@@ -87,9 +87,9 @@ fixed-width-file,fixed-width-file.github.io,Official portal for the Fixed Width 
 fixed-width-file,java-fwf,Official portal for the Fixed Width File (FWF) ecosystem.,"High-performance, type-safe Java library for parsing, validating, hydrating, and exporting Fixed Width Files (FWF)."
 fixed-width-file,php-fwf,Official portal for the Fixed Width File (FWF) ecosystem.,PHP fixed width file (FWF) processing utilities
 fixed-width-file,.github,Official portal for the Fixed Width File (FWF) ecosystem.,.github
-dashboard-ava-suite,elt-moodle,,Moodle ELT Integration
-dashboard-ava-suite,dashboard-ava-suite.github.io,,Pages
-dashboard-ava-suite,.github,,Profile
+dashboard-ava-suite,elt-moodle,"Dashboards, relatórios e métricas de acompanhamento para Ambientes Virtuais de Aprendizagem (Moodle).",Moodle ELT Integration
+dashboard-ava-suite,dashboard-ava-suite.github.io,"Dashboards, relatórios e métricas de acompanhamento para Ambientes Virtuais de Aprendizagem (Moodle).",Pages
+dashboard-ava-suite,.github,"Dashboards, relatórios e métricas de acompanhamento para Ambientes Virtuais de Aprendizagem (Moodle).",Profile
 django-by-kelsoncm,django-auth-suap,Django Tools By KelsonCM,"Backend de autenticação OAuth2 do Django para SUAP (Sistema Unificado de Administração Pública), o sistema de gestão acadêmica do IFRN."
 django-by-kelsoncm,django-project-processo-seletivo,Django Tools By KelsonCM,"Sistema web para gestão de processos seletivos, inscrições, avaliações, recursos e resultados. Desenvolvido em Django, Celery e REST Framework, com suporte a autenticação via gov.br e integração com SUAP."
 django-by-kelsoncm,django-celery-task-monitor,Django Tools By KelsonCM,Fornece monitoramento de tarefas Celery no Django Admin com polling via REST.
@@ -103,13 +103,13 @@ django-by-kelsoncm,django-admintheme-sandbox,Django Tools By KelsonCM,Pacote Dja
 django-by-kelsoncm,django-wrapper-moodle,Django Tools By KelsonCM,A Django ORM for Moodle
 django-by-kelsoncm,django-by-kelsoncm.github.io,Django Tools By KelsonCM,"Temas profissionais (AdminLTE3, DSGovBR) desenvolvida para transformar a experiência visual e funcional do Django Admin."
 django-by-kelsoncm,.github,Django Tools By KelsonCM,Profile
-digital-library-suite,h5p-mobilereader,,"Aplicativo mobile capaz de importar, armazenar, abrir e reproduzir conteúdos H5P, com foco prioritário em **Interactive Book**, para uso offline."
-digital-library-suite,h5p-exporter,,Wordpress Plugin H5P Export to HTML
-digital-library-suite,digital-library-suite.github.io,,
-digital-library-suite,.github,,Interactive Books Library Suite
+digital-library-suite,h5p-mobilereader,Suíte de plugins e integrações de bibliotecas digitais para Moodle e plataformas acadêmicas.,"Aplicativo mobile capaz de importar, armazenar, abrir e reproduzir conteúdos H5P, com foco prioritário em **Interactive Book**, para uso offline."
+digital-library-suite,h5p-exporter,Suíte de plugins e integrações de bibliotecas digitais para Moodle e plataformas acadêmicas.,Wordpress Plugin H5P Export to HTML
+digital-library-suite,digital-library-suite.github.io,Suíte de plugins e integrações de bibliotecas digitais para Moodle e plataformas acadêmicas.,Portal web e documentação oficial da suíte Digital Library Suite.
+digital-library-suite,.github,Suíte de plugins e integrações de bibliotecas digitais para Moodle e plataformas acadêmicas.,Interactive Books Library Suite
 govbr-moodletheme-suite,moodle-theme_govbr,Suíte de plugins para aplicação de tema DS GovBR para Moodle,Moodle theme in conformance Gov.BR's Design System
-govbr-moodletheme-suite,.github,Suíte de plugins para aplicação de tema DS GovBR para Moodle,
-govbr-moodletheme-suite,govbr-moodletheme-suite.github.io,Suíte de plugins para aplicação de tema DS GovBR para Moodle,
+govbr-moodletheme-suite,.github,Suíte de plugins para aplicação de tema DS GovBR para Moodle,Repositório de perfil e documentos da organização govbr-moodletheme-suite.
+govbr-moodletheme-suite,govbr-moodletheme-suite.github.io,Suíte de plugins para aplicação de tema DS GovBR para Moodle,Portal de apresentação e documentação da suíte de tema DS GovBR para Moodle.
 coloquio-ppgep-ifrn,coloquio-ppgep-ifrn.github.io,Arquivo do site do colóquio do PPgEP/IFRN,Pages
 python-by-kelsoncm,.github,Python contributions by KelsonCM,Profile
 python-by-kelsoncm,python-by-kelsoncm.github.io,Python contributions by KelsonCM,Pages
@@ -120,6 +120,6 @@ superset-by-kelsoncm,superset-docs-theme,Superset contributions by KelsonCM,"Tem
 superset-by-kelsoncm,superset-theme-dsgovbr,Superset contributions by KelsonCM,Tema do Superset no padrão do Design System do Governo Federal o Brasil (DSGovBR)
 superset-by-kelsoncm,superset-by-kelsoncm.github.io,Superset contributions by KelsonCM,Pages
 superset-by-kelsoncm,.github,Superset contributions by KelsonCM,Profile
-saude-dados-abertos,cnes-etl,"ETL, modelos de dados e dashboards para dados abertos da saúde (SUS, CNES, SIAB, etc.).",
-saude-dados-abertos,saude-dados-abertos.github.io,"ETL, modelos de dados e dashboards para dados abertos da saúde (SUS, CNES, SIAB, etc.).",
-saude-dados-abertos,.github,"ETL, modelos de dados e dashboards para dados abertos da saúde (SUS, CNES, SIAB, etc.).",
+saude-dados-abertos,cnes-etl,"ETL, modelos de dados e dashboards para dados abertos da saúde (SUS, CNES, SIAB, etc.).","Pipeline ETL para extração, tratamento e carga de dados abertos do CNES/SUS."
+saude-dados-abertos,saude-dados-abertos.github.io,"ETL, modelos de dados e dashboards para dados abertos da saúde (SUS, CNES, SIAB, etc.).","Portal institucional e documentação do projeto Saúde Dados Abertos (SUS, CNES, SIAB)."
+saude-dados-abertos,.github,"ETL, modelos de dados e dashboards para dados abertos da saúde (SUS, CNES, SIAB, etc.).",Repositório de perfil e documentos da comunidade Saúde Dados Abertos.
