@@ -1,14 +1,12 @@
 # Kelson da Costa Medeiros
-[![committers.top badge](https://user-badge.committers.top/brazil/kelsoncm.svg)](https://user-badge.committers.top/brazil/kelsoncm)
+See more: [![Full Resume (English)](https://img.shields.io/badge/🌐_Full_Resume-English-blue?style=for-the-badge)](https://kelsoncm.github.io/en/)
+[![Currículo Completo (Português)](https://img.shields.io/badge/🌐_Curr%C3%ADculo_Completo-Portugu%C3%AAs-green?style=for-the-badge)](https://kelsoncm.github.io/br/)
 
 **Specialist in Health Informatics | Educational Technology Coordinator | Full-Stack Developer**
 
 - 📍 Natal, Rio Grande do Norte, Brazil  
 - 🏢 IFRN, LAIS/UFRN, LAICA/IFRN, NEES/UFAL
 - 💼 Since 1996 developing IT solutions
-
-[![Full Resume (English)](https://img.shields.io/badge/🌐_Full_Resume-English-blue?style=for-the-badge)](https://kelsoncm.github.io/en/)
-[![Currículo Completo (Português)](https://img.shields.io/badge/🌐_Curr%C3%ADculo_Completo-Portugu%C3%AAs-green?style=for-the-badge)](https://kelsoncm.github.io/br/)
 
 ## 👨‍💻 About Me
 
