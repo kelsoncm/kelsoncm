@@ -1,3 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (( EUID != 0 )); then
+    echo "Execute com sudo: sudo bash ultimos-logins.sh" >&2
+    exit 1
+fi
+
+if ! command -v lastlog >/dev/null 2>&1; then
+    echo "Erro: o comando lastlog não está disponível." >&2
+    exit 1
+fi
+
+min_uid=$(awk '$1 == "UID_MIN" { print $2; exit }' /etc/login.defs)
+min_uid=${min_uid:-1000}
+hoje=$(( $(date -u +%s) / 86400 ))
+
+printf '%-24s %-13s %-15s %s\n' \
+    "USUÁRIO" "CONTA" "SENHA" "ÚLTIMO LOGIN"
+
 {
     while IFS=: read -r usuario _ uid _ _ _ shell; do
         [[ "$uid" =~ ^[0-9]+$ ]] || continue
@@ -5,16 +25,16 @@
         [[ "$shell" != */nologin && "$shell" != */false ]] || continue
 
         if ! registro=$(getent shadow "$usuario"); then
-            printf '4\t%-24s %-11s %-15s %s\n' \
+            printf '4\t%s\t%s\t%s\t%s\n' \
                 "$usuario" "DESCONHECIDA" "DESCONHECIDA" "—"
             continue
         fi
 
-        IFS=: read -r _ senha _ _ _ _ _ expira _ <<< "$registro"
+        senha=$(printf '%s\n' "$registro" | cut -d: -f2)
+        expira=$(printf '%s\n' "$registro" | cut -d: -f8)
 
         conta="ATIVA"
-        if [[ -n "$expira" && "$expira" =~ ^[0-9]+$ ]] &&
-           (( expira <= hoje )); then
+        if [[ "$expira" =~ ^[0-9]+$ ]] && (( expira <= hoje )); then
             conta="EXPIRADA"
         fi
 
@@ -38,7 +58,11 @@
         fi
         [[ -n "$ultimo_login" ]] || ultimo_login="SEM REGISTRO"
 
-        printf '%s\t%-24s %-11s %-15s %s\n' \
+        printf '%s\t%s\t%s\t%s\t%s\n' \
             "$ordem" "$usuario" "$conta" "$estado_senha" "$ultimo_login"
     done < /etc/passwd
-} | sort -t $'\t' -k1,1n -k2,2 | cut -f2-
+} |
+    sort -t $'\t' -k1,1n -k2,2 |
+    awk -F '\t' '{
+        printf "%-24s %-13s %-15s %s\n", $2, $3, $4, $5
+    }'
