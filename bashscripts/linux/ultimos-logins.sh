@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# Use:
+# curl -fsSL 'https://raw.githubusercontent.com/kelsoncm/kelsoncm/refs/heads/main/bashscripts/linux/ultimos-logins.sh' | sudo bash
+
 set -euo pipefail
 
 min_uid=$(awk '$1 == "UID_MIN" { print $2; exit }' /etc/login.defs)
