@@ -24,7 +24,7 @@ Exemplos:
   gh-actions-cleanup cte-zl-ifrn/integration-avaintegration_metapackage runs
 
 Padrão:
-  logs  -> apaga apenas os logs de todas as workflow runs
+  runs  -> apaga todas as workflow runs
 
 Requisitos:
   - gh autenticado com permissão de escrita no repositório"""
@@ -62,7 +62,7 @@ def main() -> None:
         sys.exit(0)
 
     repo: str = sys.argv[1]
-    mode: str = sys.argv[2] if len(sys.argv) > 2 else "logs"
+    mode: str = sys.argv[2] if len(sys.argv) > 2 else "runs"
 
     if mode not in ("logs", "runs"):
         print(f"Erro: modo inválido: {mode}. Use 'logs' ou 'runs'.", file=sys.stderr)
