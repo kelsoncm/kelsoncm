@@ -12,7 +12,7 @@ Exemplos:
   ./gh-actions-cleanup.sh cte-zl-ifrn/integration-avaintegration_metapackage runs
 
 Padrão:
-  logs  -> apaga apenas os logs de todas as workflow runs
+  runs  -> apaga todas as workflow runs
 
 Requisitos:
   - gh autenticado com permissão de escrita no repositório
@@ -37,7 +37,7 @@ if [[ $# -lt 1 ]] || [[ "${1:-}" =~ ^(-h|--help)$ ]]; then
 fi
 
 REPO="$1"
-MODE="${2:-logs}"
+MODE="${2:-runs}"
 
 if [[ "$MODE" != "logs" && "$MODE" != "runs" ]]; then
   echo "Erro: modo inválido: $MODE. Use 'logs' ou 'runs'." >&2
