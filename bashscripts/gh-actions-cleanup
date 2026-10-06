@@ -1,0 +1,157 @@
+#!/usr/bin/env python3
+"""
+Script para exclusão de logs ou workflow runs do GitHub Actions via GitHub CLI (gh).
+Compatível com Linux, macOS e Windows.
+"""
+
+from __future__ import annotations
+
+import datetime
+import shutil
+import subprocess
+import sys
+import time
+
+
+def usage() -> None:
+    print(
+        """Uso:
+  gh-actions-cleanup OWNER/REPO [logs|runs]
+
+Exemplos:
+  gh-actions-cleanup cte-zl-ifrn/integration-avaintegration_metapackage
+  gh-actions-cleanup cte-zl-ifrn/integration-avaintegration_metapackage logs
+  gh-actions-cleanup cte-zl-ifrn/integration-avaintegration_metapackage runs
+
+Padrão:
+  logs  -> apaga apenas os logs de todas as workflow runs
+
+Requisitos:
+  - gh autenticado com permissão de escrita no repositório"""
+    )
+
+
+def log(msg: str) -> None:
+    now = datetime.datetime.now().astimezone().strftime("%H:%M:%S")
+    print(f"\n[{now}] {msg}")
+
+
+def require_cmd(cmd: str) -> None:
+    if shutil.which(cmd) is None:
+        print(f"Erro: comando obrigatório não encontrado: {cmd}", file=sys.stderr)
+        sys.exit(1)
+
+
+def validate_auth() -> None:
+    log("Validando autenticação do GitHub CLI")
+    res = subprocess.run(
+        ["gh", "auth", "status"],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=False,
+    )
+    if res.returncode != 0:
+        print("Erro: gh CLI não autenticado. Execute 'gh auth login' primeiro.", file=sys.stderr)
+        sys.exit(1)
+
+
+def main() -> None:
+    if len(sys.argv) < 2 or sys.argv[1] in ("-h", "--help"):
+        usage()
+        sys.exit(0)
+
+    repo: str = sys.argv[1]
+    mode: str = sys.argv[2] if len(sys.argv) > 2 else "logs"
+
+    if mode not in ("logs", "runs"):
+        print(f"Erro: modo inválido: {mode}. Use 'logs' ou 'runs'.", file=sys.stderr)
+        sys.exit(1)
+
+    require_cmd("gh")
+    validate_auth()
+
+    log(f"Buscando workflow runs de {repo}")
+    cmd_runs = [
+        "gh",
+        "api",
+        "-H",
+        "Accept: application/vnd.github+json",
+        "-H",
+        "X-GitHub-Api-Version: 2022-11-28",
+        "--paginate",
+        f"/repos/{repo}/actions/runs?per_page=100",
+        "--jq",
+        ".workflow_runs[]?.id",
+    ]
+
+    res_runs = subprocess.run(
+        cmd_runs,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=False,
+    )
+    if res_runs.returncode != 0:
+        print(f"Erro ao buscar workflow runs de {repo}: {res_runs.stderr.strip()}", file=sys.stderr)
+        sys.exit(1)
+
+    run_ids: list[str] = [line.strip() for line in res_runs.stdout.splitlines() if line.strip()]
+
+    if not run_ids:
+        log(f"Nenhuma workflow run encontrada em {repo}")
+        sys.exit(0)
+
+    total: int = len(run_ids)
+    log(f"Encontradas {total} workflow runs")
+
+    for count, run_id in enumerate(run_ids, 1):
+        if mode == "logs":
+            print(f"\r[{count}/{total}] Apagando logs da run {run_id}...", end="", flush=True)
+            del_cmd = [
+                "gh",
+                "api",
+                "--silent",
+                "--method",
+                "DELETE",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-H",
+                "X-GitHub-Api-Version: 2022-11-28",
+                f"/repos/{repo}/actions/runs/{run_id}/logs",
+            ]
+        else:
+            print(f"\r[{count}/{total}] Apagando run {run_id}...", end="", flush=True)
+            del_cmd = [
+                "gh",
+                "api",
+                "--silent",
+                "--method",
+                "DELETE",
+                "-H",
+                "Accept: application/vnd.github+json",
+                "-H",
+                "X-GitHub-Api-Version: 2022-11-28",
+                f"/repos/{repo}/actions/runs/{run_id}",
+            ]
+
+        del_res = subprocess.run(
+            del_cmd,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            check=False,
+        )
+        if del_res.returncode != 0:
+            target = "logs da run" if mode == "logs" else "run"
+            print(f"\nFalha ao apagar {target} {run_id}: {del_res.stderr.strip()}", file=sys.stderr)
+
+        time.sleep(0.1)
+
+    print()
+    log("Concluído")
+    sys.exit(0)
+
+
+if __name__ == "__main__":
+    main()
