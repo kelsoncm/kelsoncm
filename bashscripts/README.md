@@ -62,7 +62,7 @@ Para provisionamento de ambiente Windows e utilização do tema customizado do O
 
 ## Utilitários GitHub CLI (`gh`)
 
-- `gh-actions-cleanup`: Exclui workflow runs ou logs de um repositório (`OWNER/REPO [logs|runs]`, padrão: `runs`). Compatível com Linux, macOS e Windows (wrappers Python, Bash e PowerShell).
+- `gh-actions-cleanup`: Exclui workflow runs ou logs de um repositório ou de todos os repositórios de uma organização (`OWNER[/REPO] [logs|runs]`, padrão: `runs`). Compatível com Linux, macOS e Windows (wrappers Python, Bash e PowerShell).
 - `gh_export_org_repos`: Exporta repositórios públicos das organizações do usuário autenticado no `gh` para CSV. Compatível com Linux, macOS e Windows (wrappers Python, Bash e PowerShell).
 
 
