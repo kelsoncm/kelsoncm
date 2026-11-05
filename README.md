@@ -5,7 +5,7 @@
 [![Currículo Completo (Português)](https://img.shields.io/badge/🌐_Curr%C3%ADculo_Completo-Portugu%C3%AAs-green?style=for-the-badge)](https://kelsoncm.github.io/br/)
 
 - 📍 Natal, Rio Grande do Norte, Brazil  
-- 🏢 IFRN, LAIS/UFRN, NEES/UFAL
+- 🏢 ZL/IFRN, LAIS/UFRN, NEES/UFAL
 - 💼 Since 1996 developing IT solutions
 
 ## 👨‍💻 About Me
