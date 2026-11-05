@@ -30,4 +30,4 @@ Passionate about building robust and scalable solutions for education and health
 
 ## 📊 GitHub Stats
 
-![Metrics](https://github.com/kelsoncm/kelsoncm/blob/main/github-metrics.svg)
+![Metrics](github-metrics.svg)
