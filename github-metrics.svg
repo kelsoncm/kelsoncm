@@ -25,7 +25,7 @@
   <circle cx="20" cy="100" r="3" class="dot"/><text x="30" y="104" class="txt">Followed by 12 users</text>
   <circle cx="248" cy="100" r="3" class="dot"/><text x="258" y="104" class="txt">Member of 24 organizations</text>
   <text x="16" y="134" class="title">Contributions by year</text>
-  <text x="464" y="134" class="txt" text-anchor="end">6 838 commits</text>
+  <text x="464" y="134" class="txt" text-anchor="end">6 845 commits</text>
   <rect x="20.48" y="228.50" width="20.91" height="1.50" rx="2" class="bar"><title>2012: 1</title></rect>
   <text x="30.93" y="225.50" class="val">1</text>
   <text x="30.93" y="242.00" class="yr">12</text>
@@ -38,72 +38,72 @@
   <rect x="110.08" y="230.00" width="20.91" height="0.00" rx="2" class="bar"><title>2015: 0</title></rect>
   <text x="120.53" y="227.00" class="val"></text>
   <text x="120.53" y="242.00" class="yr">15</text>
-  <rect x="139.95" y="220.30" width="20.91" height="9.70" rx="2" class="bar"><title>2016: 116</title></rect>
-  <text x="150.40" y="217.30" class="val">116</text>
+  <rect x="139.95" y="220.31" width="20.91" height="9.69" rx="2" class="bar"><title>2016: 116</title></rect>
+  <text x="150.40" y="217.31" class="val">116</text>
   <text x="150.40" y="242.00" class="yr">16</text>
   <rect x="169.81" y="226.18" width="20.91" height="3.82" rx="2" class="bar"><title>2017: 18</title></rect>
   <text x="180.27" y="223.18" class="val">18</text>
   <text x="180.27" y="242.00" class="yr">17</text>
-  <rect x="199.68" y="219.45" width="20.91" height="10.55" rx="2" class="bar"><title>2018: 137</title></rect>
-  <text x="210.13" y="216.45" class="val">137</text>
+  <rect x="199.68" y="219.46" width="20.91" height="10.54" rx="2" class="bar"><title>2018: 137</title></rect>
+  <text x="210.13" y="216.46" class="val">137</text>
   <text x="210.13" y="242.00" class="yr">18</text>
-  <rect x="229.55" y="216.46" width="20.91" height="13.54" rx="2" class="bar"><title>2019: 226</title></rect>
-  <text x="240.00" y="213.46" class="val">226</text>
+  <rect x="229.55" y="216.47" width="20.91" height="13.53" rx="2" class="bar"><title>2019: 226</title></rect>
+  <text x="240.00" y="213.47" class="val">226</text>
   <text x="240.00" y="242.00" class="yr">19</text>
-  <rect x="259.41" y="216.61" width="20.91" height="13.39" rx="2" class="bar"><title>2020: 221</title></rect>
-  <text x="269.87" y="213.61" class="val">221</text>
+  <rect x="259.41" y="216.62" width="20.91" height="13.38" rx="2" class="bar"><title>2020: 221</title></rect>
+  <text x="269.87" y="213.62" class="val">221</text>
   <text x="269.87" y="242.00" class="yr">20</text>
   <rect x="289.28" y="225.15" width="20.91" height="4.85" rx="2" class="bar"><title>2021: 29</title></rect>
   <text x="299.73" y="222.15" class="val">29</text>
   <text x="299.73" y="242.00" class="yr">21</text>
-  <rect x="319.15" y="216.40" width="20.91" height="13.60" rx="2" class="bar"><title>2022: 228</title></rect>
-  <text x="329.60" y="213.40" class="val">228</text>
+  <rect x="319.15" y="216.41" width="20.91" height="13.59" rx="2" class="bar"><title>2022: 228</title></rect>
+  <text x="329.60" y="213.41" class="val">228</text>
   <text x="329.60" y="242.00" class="yr">22</text>
-  <rect x="349.01" y="208.08" width="20.91" height="21.92" rx="2" class="bar"><title>2023: 592</title></rect>
-  <text x="359.47" y="205.08" class="val">592</text>
+  <rect x="349.01" y="208.10" width="20.91" height="21.90" rx="2" class="bar"><title>2023: 592</title></rect>
+  <text x="359.47" y="205.10" class="val">592</text>
   <text x="359.47" y="242.00" class="yr">23</text>
-  <rect x="378.88" y="209.87" width="20.91" height="20.13" rx="2" class="bar"><title>2024: 499</title></rect>
-  <text x="389.33" y="206.87" class="val">499</text>
+  <rect x="378.88" y="209.89" width="20.91" height="20.11" rx="2" class="bar"><title>2024: 499</title></rect>
+  <text x="389.33" y="206.89" class="val">499</text>
   <text x="389.33" y="242.00" class="yr">24</text>
-  <rect x="408.75" y="209.30" width="20.91" height="20.70" rx="2" class="bar"><title>2025: 528</title></rect>
-  <text x="419.20" y="206.30" class="val">528</text>
+  <rect x="408.75" y="209.32" width="20.91" height="20.68" rx="2" class="bar"><title>2025: 528</title></rect>
+  <text x="419.20" y="206.32" class="val">528</text>
   <text x="419.20" y="242.00" class="yr">25</text>
-  <rect x="438.61" y="160.00" width="20.91" height="70.00" rx="2" class="bar"><title>2026: 6 037</title></rect>
-  <text x="449.07" y="157.00" class="val">6 037</text>
+  <rect x="438.61" y="160.00" width="20.91" height="70.00" rx="2" class="bar"><title>2026: 6 048</title></rect>
+  <text x="449.07" y="157.00" class="val">6 048</text>
   <text x="449.07" y="242.00" class="yr">26</text>
   <text x="16" y="264" class="title">Activity</text>
   <circle cx="20" cy="282" r="3" class="dot"/><text x="30" y="286" class="txt">14 pull requests reviewed</text>
-  <circle cx="248" cy="282" r="3" class="dot"/><text x="258" y="286" class="txt">830 pull requests opened</text>
-  <circle cx="20" cy="304" r="3" class="dot"/><text x="30" y="308" class="txt">818 issues opened</text>
-  <circle cx="248" cy="304" r="3" class="dot"/><text x="258" y="308" class="txt">738 issues resolved</text>
+  <circle cx="248" cy="282" r="3" class="dot"/><text x="258" y="286" class="txt">832 pull requests opened</text>
+  <circle cx="20" cy="304" r="3" class="dot"/><text x="30" y="308" class="txt">820 issues opened</text>
+  <circle cx="248" cy="304" r="3" class="dot"/><text x="258" y="308" class="txt">741 issues resolved</text>
   <text x="16" y="338" class="title">Most used languages</text>
   <clipPath id="clip350"><rect x="16" y="350" width="448" height="8" rx="4"/></clipPath>
   <g clip-path="url(#clip350)">
-  <rect x="16.00" y="350" width="135.61" height="8" fill="#e34c26"/>
-  <rect x="151.11" y="350" width="108.71" height="8" fill="#336790"/>
-  <rect x="259.33" y="350" width="66.41" height="8" fill="#f1e05a"/>
-  <rect x="325.24" y="350" width="49.00" height="8" fill="#4F5D95"/>
-  <rect x="373.74" y="350" width="38.91" height="8" fill="#3572A5"/>
-  <rect x="412.15" y="350" width="24.18" height="8" fill="#663399"/>
-  <rect x="435.83" y="350" width="18.68" height="8" fill="#dea584"/>
-  <rect x="454.00" y="350" width="10.50" height="8" fill="#724b3b"/>
+  <rect x="16.00" y="350" width="109.05" height="8" fill="#f1e05a"/>
+  <rect x="124.55" y="350" width="101.93" height="8" fill="#e34c26"/>
+  <rect x="225.98" y="350" width="80.47" height="8" fill="#4F5D95"/>
+  <rect x="305.95" y="350" width="63.88" height="8" fill="#3572A5"/>
+  <rect x="369.33" y="350" width="37.32" height="8" fill="#663399"/>
+  <rect x="406.15" y="350" width="30.48" height="8" fill="#dea584"/>
+  <rect x="436.13" y="350" width="16.98" height="8" fill="#724b3b"/>
+  <rect x="452.61" y="350" width="11.89" height="8" fill="#c6538c"/>
   </g>
-  <circle cx="21" cy="372" r="5" fill="#e34c26"/>
-  <text x="32" y="376" class="txt">HTML <tspan class="muted">30.2%</tspan></text>
-  <circle cx="245" cy="372" r="5" fill="#336790"/>
-  <text x="256" y="376" class="txt">PLpgSQL <tspan class="muted">24.2%</tspan></text>
-  <circle cx="21" cy="392" r="5" fill="#f1e05a"/>
-  <text x="32" y="396" class="txt">JavaScript <tspan class="muted">14.7%</tspan></text>
-  <circle cx="245" cy="392" r="5" fill="#4F5D95"/>
-  <text x="256" y="396" class="txt">PHP <tspan class="muted">10.8%</tspan></text>
-  <circle cx="21" cy="412" r="5" fill="#3572A5"/>
-  <text x="32" y="416" class="txt">Python <tspan class="muted">8.6%</tspan></text>
-  <circle cx="245" cy="412" r="5" fill="#663399"/>
-  <text x="256" y="416" class="txt">CSS <tspan class="muted">5.3%</tspan></text>
-  <circle cx="21" cy="432" r="5" fill="#dea584"/>
-  <text x="32" y="436" class="txt">Rust <tspan class="muted">4.1%</tspan></text>
-  <circle cx="245" cy="432" r="5" fill="#724b3b"/>
-  <text x="256" y="436" class="txt">Mustache <tspan class="muted">2.2%</tspan></text>
+  <circle cx="21" cy="372" r="5" fill="#f1e05a"/>
+  <text x="32" y="376" class="txt">JavaScript <tspan class="muted">24.2%</tspan></text>
+  <circle cx="245" cy="372" r="5" fill="#e34c26"/>
+  <text x="256" y="376" class="txt">HTML <tspan class="muted">22.6%</tspan></text>
+  <circle cx="21" cy="392" r="5" fill="#4F5D95"/>
+  <text x="32" y="396" class="txt">PHP <tspan class="muted">17.9%</tspan></text>
+  <circle cx="245" cy="392" r="5" fill="#3572A5"/>
+  <text x="256" y="396" class="txt">Python <tspan class="muted">14.1%</tspan></text>
+  <circle cx="21" cy="412" r="5" fill="#663399"/>
+  <text x="32" y="416" class="txt">CSS <tspan class="muted">8.2%</tspan></text>
+  <circle cx="245" cy="412" r="5" fill="#dea584"/>
+  <text x="256" y="416" class="txt">Rust <tspan class="muted">6.7%</tspan></text>
+  <circle cx="21" cy="432" r="5" fill="#724b3b"/>
+  <text x="32" y="436" class="txt">Mustache <tspan class="muted">3.7%</tspan></text>
+  <circle cx="245" cy="432" r="5" fill="#c6538c"/>
+  <text x="256" y="436" class="txt">SCSS <tspan class="muted">2.5%</tspan></text>
   <text x="16" y="470" class="title">Most used licenses</text>
   <clipPath id="clip482"><rect x="16" y="482" width="448" height="8" rx="4"/></clipPath>
   <g clip-path="url(#clip482)">
