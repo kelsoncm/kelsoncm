@@ -130,7 +130,8 @@ query($login: String!) {
 REPOS_QUERY = """
 query($login: String!, $after: String) {
   user(login: $login) {
-    repositories(first: 100, after: $after, ownerAffiliations: OWNER, isFork: false) {
+    # inclui repositórios das organizações (onde estão os plugins Moodle/PHP e as licenças GPL)
+    repositories(first: 100, after: $after, ownerAffiliations: [OWNER, ORGANIZATION_MEMBER], isFork: false) {
       pageInfo { hasNextPage endCursor }
       nodes {
         licenseInfo { spdxId name }
@@ -203,7 +204,8 @@ def collect(client: GitHubClient, login: str) -> Stats:
                 lic["No license"] += 1
             else:
                 spdx = li["spdxId"]
-                lic[li["name"] if not spdx or spdx == "NOASSERTION" else spdx] += 1
+                # NOASSERTION = arquivo de licença que o GitHub não reconhece
+                lic["Custom" if not spdx or spdx == "NOASSERTION" else spdx] += 1
             for e in r["languages"]["edges"]:
                 name = e["node"]["name"]
                 lang_size[name] += e["size"]
@@ -330,6 +332,9 @@ def render(s: Stats) -> str:
 
     # ---- Contribuições por ano
     el.append(section_title(y, "Contributions by year"))
+    el.append(
+        f'<text x="{WIDTH - PAD}" y="{y}" class="txt" text-anchor="end">{escape(plural(s.commits, "commit", "commits"))}</text>'
+    )
     y += 12
     chart_h = 70
     n = len(s.yearly)
@@ -356,7 +361,6 @@ def render(s: Stats) -> str:
     el.append(section_title(y, "Activity"))
     y += 22
     acts = [
-        plural(s.commits, "commit", "commits"),
         plural(s.reviews, "pull request reviewed", "pull requests reviewed"),
         plural(s.prs_opened, "pull request opened", "pull requests opened"),
         plural(s.issues_opened, "issue opened", "issues opened"),
